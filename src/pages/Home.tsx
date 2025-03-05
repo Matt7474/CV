@@ -20,7 +20,7 @@ export default function Home() {
 	return (
 		<>
 			{/* Partie résumé */}
-			<div className="pt-20 flex justify-center">
+			<div className="pt-10 3xl:pt-40 flex justify-center ">
 				<div className="z-1">
 					{/* Image de fond visible uniquement en mode sombre et à partir du 3xl */}
 					{!isDarkmode && (

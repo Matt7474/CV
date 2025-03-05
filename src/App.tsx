@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import useDarkMode from "./store/darkmode";
 import Portfolio from "./pages/Portfolio";
+import Project from "./pages/Project";
 
 function App() {
 	const { isDarkmode } = useDarkMode();
@@ -22,6 +23,7 @@ function App() {
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/portfolio" element={<Portfolio />} />
+						<Route path="/project/:slug" element={<Project />} />
 					</Routes>
 				</div>
 				<Footer />
