@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import useDarkMode from "../store/darkmode";
 import { useState } from "react";
-// import { useState } from "react";
 
 export default function Home() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -21,18 +20,19 @@ export default function Home() {
 	return (
 		<>
 			{/* Partie résumé */}
-			<div className="pt-12 flex justify-center">
-				<div className="relative z-30">
-					{/* Image de fond visible uniquement en mode sombre */}
+			<div className="pt-20 flex justify-center">
+				<div className="z-1">
+					{/* Image de fond visible uniquement en mode sombre et à partir du 3xl */}
 					{!isDarkmode && (
 						<img
 							src="/palmiers2.png"
 							alt="palmiers"
-							className="absolute opacity-80"
+							className="fixed bottom-0 left-0 right-0 opacity-80 hidden lg:block"
 						/>
 					)}
 				</div>
-				<div className="flex flex-col rounded-2xl bg-gradient-to-r from-cyan-500 via-pink-500 to-indigo-800 p-0.5 mx-8 md:mx-20 lg:mx-32 lg:mb-8 xl:mx-72 2xl:mx-120 3xl:mx-140 4xl:mx-200">
+
+				<div className="z-1 flex flex-col rounded-2xl bg-gradient-to-r from-cyan-500 via-pink-500 to-indigo-800 p-0.5 mx-8 md:mx-20 lg:mx-32 lg:mb-8 xl:mx-72 2xl:mx-120 3xl:mx-140 4xl:mx-200">
 					<h1
 						className={
 							isDarkmode
@@ -74,7 +74,7 @@ export default function Home() {
 						}
 					>
 						{/* Parti Contact */}
-						<div className="md:border-r-2 md:border-emerald-400 md:pb-8 md:pr-4 3xl:border-r-0">
+						<div className="3xl:border-r-0">
 							<div className="flex md:pt-4 ">
 								<ContactRound
 									size={26}
@@ -199,7 +199,7 @@ export default function Home() {
 						{/* Fin Parti Contact */}
 
 						{/* Parti Hard Skills */}
-						<div className="md:border-r-2 md:border-emerald-400 pb-8 md:pr-4 3xl:border-r-0">
+						<div className="3xl:border-r-0">
 							<div className="flex pt-6 md:pt-4">
 								<Puzzle
 									size={26}
@@ -306,7 +306,7 @@ export default function Home() {
 						{/* Fin Partie Hard Skills */}
 
 						{/* Partie Soft Skills */}
-						<div className="md:border-r-2 md:border-emerald-400 pb-8 md:pr-4 3xl:border-r-0">
+						<div className="3xl:border-r-0">
 							<div className="flex pt-6 md:pt-4">
 								<Puzzle
 									size={26}
@@ -388,7 +388,7 @@ export default function Home() {
 						{/* Fin Partie Soft Skills */}
 
 						{/* Partie Centres d'interêt */}
-						<div className="md:border-r-2 md:border-emerald-400 pb-8 md:pr-4 3xl:border-r-0">
+						<div className="3xl:border-r-0">
 							<div className="flex pt-6 md:pt-4">
 								<Brain
 									size={26}
@@ -431,7 +431,7 @@ export default function Home() {
 						{/* Fin Partie Centres d'interêt */}
 
 						{/* Partie Language */}
-						<div className="md:border-r-2 md:border-emerald-400 md:pr-4 3xl:border-r-0">
+						<div className="3xl:border-r-0">
 							<div className="flex pt-6 md:pt-4">
 								<Languages
 									size={26}
