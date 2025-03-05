@@ -65,7 +65,7 @@ export default function Home() {
 				{/* //----------------------------------------------------------------------------// */}
 				{/* Partie gauche CV */}
 				{/* //----------------------------------------------------------------------------// */}
-				<div className="mt-4 flex p-0.5 mx-4 relative rounded-2xl bg-gradient-to-r from-cyan-500 via-pink-500 to-indigo-800 shadow-emerald-500/20  md:-mr-1 pr-0 md:rounded-r-none md:bg-gradient-to-r md:from-cyan-500  md:via-[70%] md:to-pink-500 lg:ml-16 xl:ml-40 2xl:ml-70">
+				<div className="mt-4 flex p-0.5 mx-4 relative rounded-2xl bg-gradient-to-r from-cyan-500 via-pink-500 to-indigo-800 shadow-emerald-500/20  md:-mr-1 pr-0.5 md:rounded-r-none md:bg-gradient-to-r md:from-cyan-500  md:via-[70%] md:to-pink-500 lg:ml-16 xl:ml-40 2xl:ml-70">
 					<div
 						className={
 							isDarkmode
@@ -482,7 +482,7 @@ export default function Home() {
 				{/* //----------------------------------------------------------------------------// */}
 				{/* Partie droite CV */}
 				{/* //----------------------------------------------------------------------------// */}
-				<div className="mt-4 flex p-0.5 mx-4 relative rounded-2xl bg-gradient-to-r from-cyan-500 via-pink-500 to-indigo-800 shadow-emerald-500/20 md:mt-4 md:ml-0 md:pl-0 md:rounded-l-none md:bg-gradient-to-r md:from-pink-500 md:to-indigo-800 lg:mr-16 xl:mr-40 2xl:mr-70 ">
+				<div className="mt-4 flex p-0.5 mx-4 relative rounded-2xl bg-gradient-to-r from-cyan-500 via-pink-500 to-indigo-800 shadow-emerald-500/20 md:mt-4 md:ml-0 md:pl-0 md:rounded-l-none md:bg-gradient-to-r md:from-pink-500 md:to-indigo-800 lg:mr-16 xl:mr-40 2xl:mr-70">
 					<div
 						className={
 							isDarkmode
