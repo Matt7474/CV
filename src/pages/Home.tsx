@@ -22,7 +22,7 @@ export default function Home() {
 		<>
 			{/* Partie résumé */}
 			<div className="pt-12 flex justify-center">
-				<div className="relative">
+				<div className="relative z-30">
 					{/* Image de fond visible uniquement en mode sombre */}
 					{!isDarkmode && (
 						<img
@@ -32,12 +32,12 @@ export default function Home() {
 						/>
 					)}
 				</div>
-				<div className="flex flex-col rounded-2xl bg-gradient-to-r from-cyan-500 via-pink-500 to-indigo-800 p-1 mx-8 lg:mx-24 xl:mx-72 2xl:w-1/3">
+				<div className="flex flex-col rounded-2xl bg-gradient-to-r from-cyan-500 via-pink-500 to-indigo-800 p-0.5 mx-8 md:mx-20 lg:mx-32 lg:mb-8 xl:mx-72 2xl:mx-120 3xl:mx-140 4xl:mx-200">
 					<h1
 						className={
 							isDarkmode
-								? "rounded-t-2xl justify-items-center font-medium text-normal bg-gray-900 pb-4 pt-2 px-4 text-white md:text-2xl text-center"
-								: "rounded-t-2xl justify-items-center font-medium text-normal bg-white pb-4 pt-2 px-4 text-black md:text-2xl text-center"
+								? "rounded-t-2xl justify-items-center font-medium text-normal bg-gray-900 pb-4 pt-2 px-4 text-white md:text-xl text-center 3xl:font-semibold 3xl:text-3xl 3xl:pt-4"
+								: "rounded-t-2xl justify-items-center font-medium text-normal bg-white pb-4 pt-2 px-4 text-black md:text-xl text-center 3xl:font-semibold 3xl:text-3xl 3xl:pt-4"
 						}
 					>
 						Concepteur & Developpeur FullStack
@@ -45,8 +45,8 @@ export default function Home() {
 					<p
 						className={
 							isDarkmode
-								? "text-justify rounded-b-2xl text-sm font-normal bg-gray-900 text-white pb-2 px-4 md:text-xl"
-								: "text-justify rounded-b-2xl text-sm font-normal bg-white text-black pb-2 px-4 md:text-xl"
+								? "text-justify rounded-b-2xl text-sm font-normal bg-gray-900 text-white pb-2 px-4 md:text-base 3xl:text-xl"
+								: "text-justify rounded-b-2xl text-sm font-normal bg-white text-black pb-2 px-4 md:text-base 3xl:text-xl"
 						}
 					>
 						Après une réflexion approfondie sur mes envies de carrière, j'ai
@@ -61,11 +61,11 @@ export default function Home() {
 			</div>
 			{/* Fin Partie résumé */}
 
-			<div className="md:flex">
+			<div className="md:flex 3xl:flex justify-center 3xl:mx-50 4xl:mx-110">
 				{/* //----------------------------------------------------------------------------// */}
 				{/* Partie gauche CV */}
 				{/* //----------------------------------------------------------------------------// */}
-				<div className="mt-4 flex p-1 mx-4 relative rounded-2xl bg-gradient-to-r from-cyan-500 via-pink-500 to-indigo-800 shadow-emerald-500/20  md:mr-0 md:pr-0 md:border-r-3 md:border-emerald-400 md:rounded-r-none md:bg-gradient-to-r md:from-cyan-500 md:to-pink-500">
+				<div className="mt-4 flex p-0.5 mx-4 relative rounded-2xl bg-gradient-to-r from-cyan-500 via-pink-500 to-indigo-800 shadow-emerald-500/20  md:-mr-1 pr-0 md:rounded-r-none md:bg-gradient-to-r md:from-cyan-500  md:via-[70%] md:to-pink-500 lg:ml-16 xl:ml-40 2xl:ml-70">
 					<div
 						className={
 							isDarkmode
@@ -74,11 +74,11 @@ export default function Home() {
 						}
 					>
 						{/* Parti Contact */}
-						<div>
-							<div className="flex md:pt-4">
+						<div className="md:border-r-2 md:border-emerald-400 md:pb-8 md:pr-4 3xl:border-r-0">
+							<div className="flex md:pt-4 ">
 								<ContactRound
 									size={26}
-									className={isDarkmode ? "text-emerald-300" : "text-pink-400"}
+									className={isDarkmode ? "text-emerald-300" : "text-pink-400 "}
 								/>
 								<h1
 									className={
@@ -199,8 +199,8 @@ export default function Home() {
 						{/* Fin Parti Contact */}
 
 						{/* Parti Hard Skills */}
-						<div>
-							<div className="flex pt-6 md:pt-12">
+						<div className="md:border-r-2 md:border-emerald-400 pb-8 md:pr-4 3xl:border-r-0">
+							<div className="flex pt-6 md:pt-4">
 								<Puzzle
 									size={26}
 									className={
@@ -227,7 +227,9 @@ export default function Home() {
 										className="text-emerald-400 mt-1"
 										size={16}
 									/>
-									<h3 className="pl-2 font-semibold ">Intégration web :</h3>
+									<h3 className="pl-2 font-semibold 3xl:font-bold ">
+										Intégration web :
+									</h3>
 								</div>
 								<div className="pl-6 ">
 									<p className="text-sm md:text-base">HTML5, CSS3,</p>
@@ -247,7 +249,7 @@ export default function Home() {
 										className="text-emerald-400 mt-1"
 										size={16}
 									/>
-									<h3 className="pl-2 font-semibold ">
+									<h3 className="pl-2 font-semibold 3xl:font-bold ">
 										Développement Frontend :
 									</h3>
 								</div>
@@ -267,7 +269,7 @@ export default function Home() {
 										className="text-emerald-400 mt-1"
 										size={16}
 									/>
-									<h3 className="pl-2 font-semibold ">
+									<h3 className="pl-2 font-semibold 3xl:font-bold ">
 										Développement Backend :
 									</h3>
 								</div>
@@ -285,7 +287,9 @@ export default function Home() {
 										className="text-emerald-400 mt-1"
 										size={16}
 									/>
-									<h3 className="pl-2 font-semibold ">Gestion de projet :</h3>
+									<h3 className="pl-2 font-semibold 3xl:font-bold ">
+										Gestion de projet :
+									</h3>
 								</div>
 								<div className="pl-6">
 									<p className="text-sm md:text-base">User stories, sprint</p>
@@ -302,8 +306,8 @@ export default function Home() {
 						{/* Fin Partie Hard Skills */}
 
 						{/* Partie Soft Skills */}
-						<div>
-							<div className="flex pt-6 md:pt-12">
+						<div className="md:border-r-2 md:border-emerald-400 pb-8 md:pr-4 3xl:border-r-0">
+							<div className="flex pt-6 md:pt-4">
 								<Puzzle
 									size={26}
 									className={
@@ -384,8 +388,8 @@ export default function Home() {
 						{/* Fin Partie Soft Skills */}
 
 						{/* Partie Centres d'interêt */}
-						<div>
-							<div className="flex pt-6 md:pt-12">
+						<div className="md:border-r-2 md:border-emerald-400 pb-8 md:pr-4 3xl:border-r-0">
+							<div className="flex pt-6 md:pt-4">
 								<Brain
 									size={26}
 									className={isDarkmode ? "text-emerald-300" : "text-pink-400"}
@@ -427,8 +431,8 @@ export default function Home() {
 						{/* Fin Partie Centres d'interêt */}
 
 						{/* Partie Language */}
-						<div>
-							<div className="flex pt-6 md:pt-12">
+						<div className="md:border-r-2 md:border-emerald-400 md:pr-4 3xl:border-r-0">
+							<div className="flex pt-6 md:pt-4">
 								<Languages
 									size={26}
 									className={isDarkmode ? "text-emerald-300" : "text-pink-400"}
@@ -478,34 +482,40 @@ export default function Home() {
 				{/* //----------------------------------------------------------------------------// */}
 				{/* Partie droite CV */}
 				{/* //----------------------------------------------------------------------------// */}
-				<div className="mt-4 flex p-1 mx-4 relative rounded-2xl bg-gradient-to-r from-cyan-500 via-pink-500 to-indigo-800 shadow-emerald-500/20 md:mt-4  md:ml-0 md:pl-0 md:rounded-l-none md:bg-gradient-to-r md:from-pink-500 md:to-indigo-800">
+				<div className="mt-4 flex p-0.5 mx-4 relative rounded-2xl bg-gradient-to-r from-cyan-500 via-pink-500 to-indigo-800 shadow-emerald-500/20 md:mt-4 md:ml-0 md:pl-0 md:rounded-l-none md:bg-gradient-to-r md:from-pink-500 md:to-indigo-800 lg:mr-16 xl:mr-40 2xl:mr-70 ">
 					<div
 						className={
 							isDarkmode
-								? "w-full bg-gray-800 rounded-2xl text-white border-1 border-l-transparent border-t-transparent border-r-transparent border-b-transparent z-2 md:rounded-l-none"
-								: "w-full bg-white rounded-2xl text-black border-1 border-l-transparent border-t-transparent border-r-transparent border-b-transparent z-2 md:rounded-l-none"
+								? "w-full bg-gray-800 rounded-2xl text-white border-1 border-l-transparent border-t-transparent border-r-transparent border-b-transparent z-2 md:rounded-l-none md:border-l-transparent md:border-3"
+								: "w-full bg-white rounded-2xl text-black border-1 border-l-transparent border-t-transparent border-r-transparent border-b-transparent z-2 md:rounded-l-none md:border-l-emerald-500 md:border-3"
 						}
 					>
 						<div className="">
 							<div className="flex items-center place-self-center gap-2 pt-4">
-								<h2 className="text-3xl font-semibold">DIMIER</h2>
-								<h2 className="text-3xl font-semibold">Matthieu</h2>
+								<h2 className="text-3xl font-semibold 3xl:text-5xl 3xl:font-normal">
+									DIMIER
+								</h2>
+								<h2 className="text-3xl font-semibold 3xl:text-5xl 3xl:font-normal">
+									Matthieu
+								</h2>
 							</div>
 							<div className="flex justify-center items-center text-center pt-4 mx-4">
-								<p className="text-2xl break-words">
+								<p className="text-2xl break-words 3xl:text-3xl">
 									Concepteur Développeur Web & App
 								</p>
 							</div>
 						</div>
 						{/* Partie Formation */}
 						<div className="flex-col mt-8">
-							<h3 className="text-2xl font-semibold pl-10 pb-4">Formations</h3>
+							<h3 className="text-2xl font-semibold pl-10 pb-4 3xl:font-bold">
+								Formations
+							</h3>
 							<div className="flex ml-2">
 								{/* 2 / 10 */}
 								<div className="w-1/6 flex flex-col pt-1.5">
-									<p className="self-center text-sm">2025</p>
-									<p className="self-center text-sm">-</p>
-									<p className="self-center text-sm">2024</p>
+									<p className="self-center text-sm 3xl:text-base">2025</p>
+									<p className="self-center text-sm 3xl:text-base">-</p>
+									<p className="self-center text-sm 3xl:text-base">2024</p>
 								</div>
 
 								<div className="">
@@ -528,7 +538,7 @@ export default function Home() {
 											: "w-5/6 ml-3 pl-5 pr-4 border-3 border-l-pink-400 border-t-transparent border-r-transparent border-b-transparent"
 									}
 								>
-									<h4 className="font-semibold pb-2">
+									<h4 className="font-semibold pb-2 3xl:font-bold">
 										Formation Concepteur Développeur d'Application Web & Web
 										mobile. Titre pro niveau VI
 									</h4>
@@ -610,14 +620,14 @@ export default function Home() {
 							</div>
 
 							{/* Partie Experience */}
-							<h3 className="text-2xl font-semibold pl-10 pt-8 pb-4">
+							<h3 className="text-2xl font-semibold pl-10 pt-8 pb-4 3xl:font-bold">
 								Experiences
 							</h3>
 							<div className=" flex">
 								<div className="w-1/6  flex flex-col pt-1.5">
-									<p className="self-center text-sm">2024</p>
-									<p className="self-center text-sm">-</p>
-									<p className="self-center text-sm">2013</p>
+									<p className="self-center text-sm 3xl:text-base">2024</p>
+									<p className="self-center text-sm 3xl:text-base">-</p>
+									<p className="self-center text-sm 3xl:text-base">2013</p>
 								</div>
 								<div className="w-0.5/10  pl-2">
 									<Circle
@@ -635,7 +645,7 @@ export default function Home() {
 											: "w-5/6 ml-3 pl-5 pr-4 border-3 border-l-pink-400 border-t-transparent border-r-transparent border-b-transparent"
 									}
 								>
-									<h4 className="font-semibold pb-2">
+									<h4 className="font-semibold pb-2 3xl:font-bold">
 										Magasinier Cariste - Responsable de zone
 									</h4>
 									<a
@@ -656,7 +666,7 @@ export default function Home() {
 											className="shrink-0 transition-all duration-300 "
 										/>
 										<p className="pt-1 flex-1 min-w-0">
-											<span className="font-semibold">
+											<span className="font-semibold 3xl:font-bold">
 												Capacité d’analyse :
 											</span>{" "}
 											Comprendre et décomposer des problèmes en éléments simple.
@@ -668,7 +678,9 @@ export default function Home() {
 											className="shrink-0 transition-all duration-300 "
 										/>
 										<p className="pt-1 flex-1 min-w-0">
-											<span className="font-semibold">Communication :</span>{" "}
+											<span className="font-semibold 3xl:font-bold">
+												Communication :
+											</span>{" "}
 											Organisation et animation de formations internes.
 										</p>
 									</div>
@@ -678,7 +690,7 @@ export default function Home() {
 											className="shrink-0 transition-all duration-300 "
 										/>
 										<p className="pt-1 pb-8 flex-1 min-w-0">
-											<span className="font-semibold">
+											<span className="font-semibold 3xl:font-bold">
 												Résolution de problèmes :
 											</span>{" "}
 											Identifier les causes et proposition de solutions.
@@ -689,9 +701,9 @@ export default function Home() {
 
 							<div className="flex">
 								<div className="w-1/6  flex flex-col pt-1.5">
-									<p className="self-center text-sm">2013</p>
-									<p className="self-center text-sm">-</p>
-									<p className="self-center text-sm">2012</p>
+									<p className="self-center text-sm 3xl:text-base">2013</p>
+									<p className="self-center text-sm 3xl:text-base">-</p>
+									<p className="self-center text-sm 3xl:text-base">2012</p>
 								</div>
 								<div className="w-0.5/10  pl-2">
 									<Circle
@@ -709,7 +721,9 @@ export default function Home() {
 											: "w-5/6 ml-3 pl-5 pr-4 border-3 border-l-pink-400 border-t-transparent border-r-transparent border-b-transparent"
 									}
 								>
-									<h4 className="font-semibold">Manutentionnaire</h4>
+									<h4 className="font-semibold 3xl:font-bold">
+										Manutentionnaire
+									</h4>
 									<p className=" pb-2 pt-2 underline">Start People</p>
 									<div className="flex flex-wrap items-start -mx-4">
 										<Dot
@@ -717,7 +731,7 @@ export default function Home() {
 											className="shrink-0 transition-all duration-300 "
 										/>
 										<p className="pt-1 pb-8 flex-1 min-w-0">
-											<span className="font-semibold">
+											<span className="font-semibold 3xl:font-bold">
 												Gestion des délais :
 											</span>{" "}
 											Priorisation des tâches et respect des délais.
@@ -728,9 +742,9 @@ export default function Home() {
 
 							<div className=" flex">
 								<div className="w-1/6  flex flex-col pt-1.5">
-									<p className="self-center text-sm">2011</p>
-									<p className="self-center text-sm">-</p>
-									<p className="self-center text-sm">2010</p>
+									<p className="self-center text-sm 3xl:text-base">2011</p>
+									<p className="self-center text-sm 3xl:text-base">-</p>
+									<p className="self-center text-sm 3xl:text-base">2010</p>
 								</div>
 								<div className="w-0.5/10  pl-2">
 									<Circle
@@ -748,7 +762,9 @@ export default function Home() {
 											: "w-5/6 ml-3 pl-5 pr-4 border-3 border-l-pink-400 border-t-transparent border-r-transparent border-b-transparent"
 									}
 								>
-									<h4 className="font-semibold">Employé de rayon</h4>
+									<h4 className="font-semibold 3xl:font-bold">
+										Employé de rayon
+									</h4>
 									<p className="pb-2 pt-2 underline">Carrefour</p>
 
 									<div className="flex flex-wrap items-start -mx-4">
@@ -757,9 +773,11 @@ export default function Home() {
 											className="shrink-0 transition-all duration-300 "
 										/>
 										<p className="pt-1 pb-8 flex-1 min-w-0">
-											<span className="font-semibold">Autonomie :</span> Gestion
-											des priorités et résolution des problèmes sans supervision
-											directe.
+											<span className="font-semibold 3xl:font-bold">
+												Autonomie :
+											</span>{" "}
+											Gestion des priorités et résolution des problèmes sans
+											supervision directe.
 										</p>
 									</div>
 								</div>
@@ -767,9 +785,9 @@ export default function Home() {
 
 							<div className="flex">
 								<div className="w-1/6  flex flex-col pt-1.5">
-									<p className="self-center text-sm">2010</p>
-									<p className="self-center text-sm">-</p>
-									<p className="self-center text-sm">2003</p>
+									<p className="self-center text-sm 3xl:text-base">2010</p>
+									<p className="self-center text-sm 3xl:text-base">-</p>
+									<p className="self-center text-sm 3xl:text-base">2003</p>
 								</div>
 								<div className="w-0.5/10  pl-2">
 									<Circle
@@ -787,7 +805,7 @@ export default function Home() {
 											: "w-5/6 ml-3 pl-5 pr-4 border-3 border-l-pink-400 border-t-transparent border-r-transparent border-b-transparent"
 									}
 								>
-									<h4 className="font-semibold">Manager</h4>
+									<h4 className="font-semibold 3xl:font-bold">Manager</h4>
 									<p className="pb-2 pt-2 underline">Mc Donald's</p>
 
 									<div className="flex flex-wrap items-start -mx-4">
@@ -796,8 +814,11 @@ export default function Home() {
 											className="shrink-0 transition-all duration-300 "
 										/>
 										<p className="pt-1 flex-1 min-w-0">
-											<span className="font-semibold">Rigeur :</span> Travail
-											avec précision et respect des normes HACCP & de sécurités.
+											<span className="font-semibold 3xl:font-bold">
+												Rigeur :
+											</span>{" "}
+											Travail avec précision et respect des normes HACCP & de
+											sécurités.
 										</p>
 									</div>
 									<div className="flex flex-wrap items-start -mx-4">
@@ -806,7 +827,9 @@ export default function Home() {
 											className="shrink-0 transition-all duration-300 "
 										/>
 										<p className="pt-1 flex-1 min-w-0">
-											<span className="font-semibold">Gestion d’équipe :</span>{" "}
+											<span className="font-semibold 3xl:font-bold">
+												Gestion d’équipe :
+											</span>{" "}
 											Partage et écoute des collaborateurs.
 										</p>
 									</div>
@@ -816,7 +839,9 @@ export default function Home() {
 											className="shrink-0 transition-all duration-300 "
 										/>
 										<p className="pt-1 flex-1 min-w-0">
-											<span className="font-semibold">Relation client :</span>{" "}
+											<span className="font-semibold 3xl:font-bold">
+												Relation client :
+											</span>{" "}
 											Compréhension et satisfaction des besoins des clients.
 										</p>
 									</div>
@@ -826,7 +851,9 @@ export default function Home() {
 											className="shrink-0 transition-all duration-300 "
 										/>
 										<p className="pt-1 pb-4 flex-1 min-w-0">
-											<span className="font-semibold">Responsabilité :</span>{" "}
+											<span className="font-semibold 3xl:font-bold">
+												Responsabilité :
+											</span>{" "}
 											Gestion d’équipe & des fonds
 										</p>
 									</div>

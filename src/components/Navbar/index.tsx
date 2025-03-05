@@ -6,7 +6,7 @@ export default function Navbar() {
 	const location = useLocation();
 	const { isDarkmode, toggleDarkmode } = useDarkMode();
 	return (
-		<div className="flex justify-between items-center mx-8 lg:mx-24 xl:mx-72 2xl:mx-120">
+		<div className="flex justify-between items-center mx-8 lg:mx-24 xl:mx-60 2xl:mx-80">
 			<div>
 				<a
 					href="mailto:dimier.matt@gmail.com"
