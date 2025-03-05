@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import useDarkMode from "./store/darkmode";
+import Portfolio from "./pages/Portfolio";
 
 function App() {
 	const { isDarkmode } = useDarkMode();
@@ -20,6 +21,7 @@ function App() {
 				<div className="flex-grow">
 					<Routes>
 						<Route path="/" element={<Home />} />
+						<Route path="/portfolio" element={<Portfolio />} />
 					</Routes>
 				</div>
 				<Footer />

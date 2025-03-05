@@ -39,20 +39,20 @@ export default function Navbar() {
 				</Link>
 
 				<Link
-					to={"/projects"}
-					className={`group ${location.pathname === "/projects" ? "text-cyan-300" : ""} `}
+					to={"/portfolio"}
+					className={`group ${location.pathname === "/portfolio" ? "text-cyan-300" : ""} `}
 				>
 					<div className="flex flex-col items-center">
 						<BriefcaseBusiness
 							className={`${
-								location.pathname === "/projects"
+								location.pathname === "/portfolio"
 									? "text-cyan-300"
 									: "text-white"
 							} group-hover:text-cyan-300`}
 						/>
 						<p
 							className={`${
-								location.pathname === "/projects"
+								location.pathname === "/portfolio"
 									? "text-cyan-300"
 									: "text-white"
 							} group-hover:text-cyan-300`}
