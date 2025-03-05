@@ -20,7 +20,7 @@ export default function Home() {
 	return (
 		<>
 			{/* Partie résumé */}
-			<div className="pt-10 3xl:pt-40 flex justify-center ">
+			<div className="pt-10 3xl:pt-40 flex justify-center">
 				<div className="z-1">
 					{/* Image de fond visible uniquement en mode sombre et à partir du 3xl */}
 					{!isDarkmode && (
@@ -32,12 +32,12 @@ export default function Home() {
 					)}
 				</div>
 
-				<div className="z-1 flex flex-col rounded-2xl bg-gradient-to-r from-cyan-500 via-pink-500 to-indigo-800 p-0.5 mx-8 md:mx-20 lg:mx-32 lg:mb-8 xl:mx-72 2xl:mx-120 3xl:mx-140 4xl:mx-200">
+				<div className="z-1 flex flex-col rounded-2xl bg-gradient-to-r from-cyan-500 via-pink-500 to-indigo-800 p-0.5 mx-8 md:mx-20 lg:mx-32 lg:mb-8 xl:mx-72 2xl:mx-120 3xl:mx-140 4xl:mx-200 shadow-lg shadow-emerald-500/20">
 					<h1
 						className={
 							isDarkmode
-								? "rounded-t-2xl justify-items-center font-medium text-normal bg-gray-900 pb-4 pt-2 px-4 text-white md:text-xl text-center 3xl:font-semibold 3xl:text-3xl 3xl:pt-4"
-								: "rounded-t-2xl justify-items-center font-medium text-normal bg-white pb-4 pt-2 px-4 text-black md:text-xl text-center 3xl:font-semibold 3xl:text-3xl 3xl:pt-4"
+								? "rounded-t-2xl justify-items-center font-medium text-normal bg-gray-900 pb-4 pt-2 px-4 text-white md:text-xl text-center 3xl:-mb-1 3xl:font-semibold 3xl:text-3xl 3xl:pt-4"
+								: "rounded-t-2xl justify-items-center font-medium text-normal bg-white pb-4 pt-2 px-4 text-black md:text-xl text-center 3xl:-mb-1 3xl:font-semibold 3xl:text-3xl 3xl:pt-4"
 						}
 					>
 						Concepteur & Developpeur FullStack
@@ -74,7 +74,7 @@ export default function Home() {
 						}
 					>
 						{/* Parti Contact */}
-						<div className="3xl:border-r-0">
+						<div className="3xl:border-r-0 3xl:pt-4">
 							<div className="flex md:pt-4 ">
 								<ContactRound
 									size={26}
@@ -199,7 +199,7 @@ export default function Home() {
 						{/* Fin Parti Contact */}
 
 						{/* Parti Hard Skills */}
-						<div className="3xl:border-r-0">
+						<div className="3xl:border-r-0 3xl:pt-8">
 							<div className="flex pt-6 md:pt-4">
 								<Puzzle
 									size={26}
@@ -306,7 +306,7 @@ export default function Home() {
 						{/* Fin Partie Hard Skills */}
 
 						{/* Partie Soft Skills */}
-						<div className="3xl:border-r-0">
+						<div className="3xl:border-r-0 3xl:pt-8">
 							<div className="flex pt-6 md:pt-4">
 								<Puzzle
 									size={26}
@@ -388,7 +388,7 @@ export default function Home() {
 						{/* Fin Partie Soft Skills */}
 
 						{/* Partie Centres d'interêt */}
-						<div className="3xl:border-r-0">
+						<div className="3xl:border-r-0 3xl:pt-8">
 							<div className="flex pt-6 md:pt-4">
 								<Brain
 									size={26}
@@ -431,7 +431,7 @@ export default function Home() {
 						{/* Fin Partie Centres d'interêt */}
 
 						{/* Partie Language */}
-						<div className="3xl:border-r-0">
+						<div className="3xl:border-r-0 3xl:pt-8">
 							<div className="flex pt-6 md:pt-4">
 								<Languages
 									size={26}
