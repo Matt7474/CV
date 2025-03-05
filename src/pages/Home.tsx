@@ -65,7 +65,7 @@ export default function Home() {
 				{/* //----------------------------------------------------------------------------// */}
 				{/* Partie gauche CV */}
 				{/* //----------------------------------------------------------------------------// */}
-				<div className="mt-4 flex p-1 mx-4 relative rounded-2xl bg-gradient-to-r from-cyan-500 via-pink-500 to-indigo-800 shadow-emerald-500/20  md:mr-0 md:pr-0 md:border-r-3 md:border-emerald-300 md:rounded-r-none md:bg-gradient-to-r md:from-cyan-500 md:to-pink-500">
+				<div className="mt-4 flex p-1 mx-4 relative rounded-2xl bg-gradient-to-r from-cyan-500 via-pink-500 to-indigo-800 shadow-emerald-500/20  md:mr-0 md:pr-0 md:border-r-3 md:border-emerald-400 md:rounded-r-none md:bg-gradient-to-r md:from-cyan-500 md:to-pink-500">
 					<div
 						className={
 							isDarkmode
@@ -491,8 +491,8 @@ export default function Home() {
 								<h2 className="text-3xl font-semibold">DIMIER</h2>
 								<h2 className="text-3xl font-semibold">Matthieu</h2>
 							</div>
-							<div className="flex items-center text-center pt-4 mx-4">
-								<p className="text-2xl text-wrap">
+							<div className="flex justify-center items-center text-center pt-4 mx-4">
+								<p className="text-2xl break-words">
 									Concepteur Développeur Web & App
 								</p>
 							</div>
@@ -650,34 +650,38 @@ export default function Home() {
 									>
 										J&C Refresco
 									</a>
-
-									<div className="flex pt-2 -mx-4">
-										<Dot size={35} />
-										<p className="pt-1">
-											<div className="font-semibold">Capacité d’analyse :</div>
-											<p>Comprendre et décomposer</p>
-											<p>des problèmes en éléments </p>
-											<p>simple.</p>
+									<div className="flex pt-2 flex-wrap items-start -mx-4">
+										<Dot
+											size={35}
+											className="shrink-0 transition-all duration-300 "
+										/>
+										<p className="pt-1 flex-1 min-w-0">
+											<span className="font-semibold">
+												Capacité d’analyse :
+											</span>{" "}
+											Comprendre et décomposer des problèmes en éléments simple.
 										</p>
 									</div>
-
-									<div className="flex -mx-4">
-										<Dot size={35} />
-										<p className="pt-1">
-											<div className="font-semibold">Communication :</div>
-											<p>Organisation et animation </p>
-											<p>de formations internes.</p>
+									<div className="flex flex-wrap items-start -mx-4">
+										<Dot
+											size={35}
+											className="shrink-0 transition-all duration-300 "
+										/>
+										<p className="pt-1 flex-1 min-w-0">
+											<span className="font-semibold">Communication :</span>{" "}
+											Organisation et animation de formations internes.
 										</p>
 									</div>
-
-									<div className="flex mb-10 -mx-4">
-										<Dot size={35} />
-										<p className="pt-1">
-											<div className="font-semibold">
+									<div className="flex flex-wrap items-start -mx-4">
+										<Dot
+											size={35}
+											className="shrink-0 transition-all duration-300 "
+										/>
+										<p className="pt-1 pb-8 flex-1 min-w-0">
+											<span className="font-semibold">
 												Résolution de problèmes :
-											</div>
-											<p>Identifier les causes </p>
-											<p>et proposition de solutions.</p>
+											</span>{" "}
+											Identifier les causes et proposition de solutions.
 										</p>
 									</div>
 								</div>
@@ -707,12 +711,16 @@ export default function Home() {
 								>
 									<h4 className="font-semibold">Manutentionnaire</h4>
 									<p className=" pb-2 pt-2 underline">Start People</p>
-									<div className="flex mb-10 -mx-4">
-										<Dot size={35} />
-										<p className="pt-1">
-											<span className="font-semibold">Gestion des délais</span>{" "}
-											:<p>Priorisation des tâches </p>
-											<p>et respect des délais.</p>
+									<div className="flex flex-wrap items-start -mx-4">
+										<Dot
+											size={35}
+											className="shrink-0 transition-all duration-300 "
+										/>
+										<p className="pt-1 pb-8 flex-1 min-w-0">
+											<span className="font-semibold">
+												Gestion des délais :
+											</span>{" "}
+											Priorisation des tâches et respect des délais.
 										</p>
 									</div>
 								</div>
@@ -742,19 +750,22 @@ export default function Home() {
 								>
 									<h4 className="font-semibold">Employé de rayon</h4>
 									<p className="pb-2 pt-2 underline">Carrefour</p>
-									<div className="flex mb-10 -mx-4">
-										<Dot size={35} />
-										<p className="pt-1">
-											<span className="font-semibold">Autonomie</span> :
-											<p>Gestion des priorités et</p>
-											<p>résolution des problèmes</p>
-											<p>sans supervision directe.</p>
+
+									<div className="flex flex-wrap items-start -mx-4">
+										<Dot
+											size={35}
+											className="shrink-0 transition-all duration-300 "
+										/>
+										<p className="pt-1 pb-8 flex-1 min-w-0">
+											<span className="font-semibold">Autonomie :</span> Gestion
+											des priorités et résolution des problèmes sans supervision
+											directe.
 										</p>
 									</div>
 								</div>
 							</div>
 
-							<div className=" flex">
+							<div className="flex">
 								<div className="w-1/6  flex flex-col pt-1.5">
 									<p className="self-center text-sm">2010</p>
 									<p className="self-center text-sm">-</p>
@@ -778,37 +789,45 @@ export default function Home() {
 								>
 									<h4 className="font-semibold">Manager</h4>
 									<p className="pb-2 pt-2 underline">Mc Donald's</p>
-									<div className="flex -mx-4">
-										<Dot size={35} />
-										<p className="pt-1">
-											<span className="font-semibold">Rigeur :</span>
-											<p>Travail avec précision </p>
-											<p>et respect des normes </p>
-											<p>HACCP & de sécurités.</p>
+
+									<div className="flex flex-wrap items-start -mx-4">
+										<Dot
+											size={35}
+											className="shrink-0 transition-all duration-300 "
+										/>
+										<p className="pt-1 flex-1 min-w-0">
+											<span className="font-semibold">Rigeur :</span> Travail
+											avec précision et respect des normes HACCP & de sécurités.
 										</p>
 									</div>
-									<div className="flex -mx-4">
-										<Dot size={35} />
-										<p className="pt-1">
-											<span className="font-semibold">Gestion d’équipe :</span>
-											<p>Partage et écoute </p>
-											<p>des collaborateurs</p>
+									<div className="flex flex-wrap items-start -mx-4">
+										<Dot
+											size={35}
+											className="shrink-0 transition-all duration-300 "
+										/>
+										<p className="pt-1 flex-1 min-w-0">
+											<span className="font-semibold">Gestion d’équipe :</span>{" "}
+											Partage et écoute des collaborateurs.
 										</p>
 									</div>
-									<div className="flex -mx-4">
-										<Dot size={35} />
-										<p className="pt-1">
-											<span className="font-semibold">Relation client :</span>
-											<p>Compréhension et satisfaction </p>
-											<p>des besoins des clients.</p>
+									<div className="flex flex-wrap items-start -mx-4">
+										<Dot
+											size={35}
+											className="shrink-0 transition-all duration-300 "
+										/>
+										<p className="pt-1 flex-1 min-w-0">
+											<span className="font-semibold">Relation client :</span>{" "}
+											Compréhension et satisfaction des besoins des clients.
 										</p>
 									</div>
-									<div className="flex -mx-4">
-										<Dot size={35} />
-										<p className="pt-1">
-											<span className="font-semibold">Responsabilité :</span>
-											<p>Gestion d’équipe & </p>
-											<p>des fonds</p>
+									<div className="flex flex-wrap items-start -mx-4">
+										<Dot
+											size={35}
+											className="shrink-0 transition-all duration-300 "
+										/>
+										<p className="pt-1 pb-4 flex-1 min-w-0">
+											<span className="font-semibold">Responsabilité :</span>{" "}
+											Gestion d’équipe & des fonds
 										</p>
 									</div>
 								</div>
