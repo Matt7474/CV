@@ -278,8 +278,8 @@ export default function Project() {
 					<ul
 						className={
 							isDarkmode
-								? "pb-4 md:border-l-2 md:pl-6 md:border-emerald-500"
-								: "pb-4 md:border-l-2 md:pl-6 md:border-indigo-800"
+								? "pb-4 md:border-l-2 md:pl-6 md:border-emerald-500 md:flex md:flex-col"
+								: "pb-4 md:border-l-2 md:pl-6 md:border-indigo-800 md:flex md:flex-col"
 						}
 						// className={
 						// 	isDarkmode
@@ -290,8 +290,8 @@ export default function Project() {
 						<p
 							className={
 								isDarkmode
-									? "font-medium border-amber-300 pb-1  text-emerald-300"
-									: "font-medium border-amber-300 pb-1  text-cyan-400"
+									? "font-medium border-amber-300 pb-1  text-emerald-300 "
+									: "font-medium border-amber-300 pb-1  text-cyan-400 "
 							}
 						>
 							BDD

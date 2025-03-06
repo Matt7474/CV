@@ -35,4 +35,47 @@ export const portfolio = [
 			bdd: ["API"],
 		},
 	},
+	{
+		id: 3,
+		image: "/cv.png",
+		title: "CV",
+		description:
+			"CV est un site web développée avec React et TypeScript. Le projet utilise Vite pour un bundling rapide et efficace, accompagné de Tailwind CSS & DaisyUI pour un design réactif et épuré. Le code est maintenu propre grâce à Biome pour le linting et le formatage. Le site utilise une API perso (en maintenance) pour charger les données du portfolio. Enfin, le site est déployée sur o2switch, une solution simple et rapide pour l'hébergement statique. 📄",
+		slug: "cv",
+		github: "https://github.com/Matt7474/cv/",
+		date: "2025-03-05",
+		created_at: "05/03/2025",
+		techno: {
+			conception: ["MCD"],
+			front: ["React", "TypeScript", "Tailwind CSS", "DaisyUI"],
+			back: ["API perso"],
+			fullstack: [""],
+			bdd: ["API perso"],
+		},
+	},
+	{
+		id: 4,
+		image: "/oReseau.png",
+		title: "O'Reseau",
+		description:
+			"O-Reseau est un site web développée en EJS avec NodeJs & Express, L'authentification est faite grace a un JWT et stocké dans les cookies. Le projet utilise un environnement avec docker 📱",
+		slug: "Oreseau",
+		github:
+			"https://github.com/O-clock-Skaven/S20E02-challenge-social-network-Matt7474",
+		date: "2025-02-20",
+		created_at: "20/02/2025",
+		techno: {
+			conception: [
+				"User-stories",
+				"Uses-cases",
+				"diag-sequence",
+				"diag-activité",
+				"MCD",
+			],
+			front: [""],
+			back: ["NodeJS", "Express"],
+			fullstack: ["Architecture MVC", "Docker"],
+			bdd: ["MongoDB", "Mongoose"],
+		},
+	},
 ];
