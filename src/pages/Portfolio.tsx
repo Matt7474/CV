@@ -7,7 +7,7 @@ export default function Portfolio() {
 	const { isDarkmode } = useDarkMode();
 
 	return (
-		<div className="pt-40 gap-8 grid justify-center md:grid-cols-2 md:mx-10 lg:grid-cols-3 xl:justify-self-center 2xl:grid-cols-4 4xl:grid-cols-5">
+		<div className="pt-20 gap-8 grid justify-center md:grid-cols-2 md:mx-10 lg:grid-cols-3 xl:justify-self-center 2xl:grid-cols-4 3xl:pt-40 4xl:grid-cols-5">
 			{portfolio
 				.slice()
 				.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -18,8 +18,8 @@ export default function Portfolio() {
 						state={{ project }}
 						className={
 							isDarkmode
-								? "max-w-80 border border-cyan-400 text-white rounded-xl p-4 flex flex-col justify-between"
-								: "max-w-80 border border-amber-300 text-black rounded-xl p-4 flex flex-col justify-between"
+								? "max-w-80 border border-cyan-400 text-white rounded-xl p-4 flex flex-col justify-between transition-transform duration-150 hover:translate-y-4"
+								: "max-w-80 border border-amber-300 text-black rounded-xl p-4 flex flex-col justify-between transition-transform duration-150 hover:translate-y-4"
 						}
 					>
 						<div>
