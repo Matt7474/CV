@@ -1,54 +1,41 @@
-# React + TypeScript + Vite
+<strong>Mon CV et Portfolio</strong>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenue sur mon CV et portfolio en ligne ! Ce projet présente mes compétences, mes expériences professionnelles et quelques un de mes projets réalisés.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📝 <strong>Description :</strong>
 
-## Expanding the ESLint configuration
+Ce site web est conçu pour servir de CV interactif et de portfolio pour présenter mon parcours, mes compétences techniques et mes réalisations. Il inclut les sections suivantes :
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Compétences : Une liste de mes compétences techniques et personnelles.
+Projets : Une galerie de projets sur lesquels j'ai travaillé.
+Contact : Des informations pour me contacter.
+Le site est développé en React, avec des outils modernes tels que Vite, Tailwind CSS et DaisyUI.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🚀 <strong>Fonctionnalités :</strong>
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Page d'accueil dynamique : Présentation de mon profil, avec une interface claire et professionnelle.
+Responsive design : Le site s'adapte aux différentes tailles d'écran (mobile, tablette, desktop).
+Section Projets : Un espace où je présente mes projets récents avec des liens vers leurs descriptions complètes.
+Téléchargement de CV en PDF : Vous pouvez télécharger mon CV en format PDF directement depuis le site.
+Formulaire de contact : Permet aux utilisateurs de me contacter directement via un formulaire.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+
+🛠️ <strong>Technologies utilisées :</strong>
+
+React : Framework JavaScript pour la création de l'interface utilisateur.
+Vite : Outil de build rapide pour le développement et la production.
+Tailwind CSS : Framework CSS utilitaire pour créer des interfaces élégantes et responsives.
+PostgreSQL (en cours): Base de données pour stocker et récupérer les informations de mes projets.
+
+
+📫 <strong>Contact :</strong>
+
+Vous pouvez me contacter pour toute question ou collaboration via les canaux suivants :
+
+Email : dimier.matt@gmail.com
+
+LinkedIn : [DIMIER Matthieu](https://www.linkedin.com/in/matthieu-dimier-a51539290/)
+
+GitHub : [Matt7474](https://github.com/Matt7474)
