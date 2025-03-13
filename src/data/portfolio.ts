@@ -23,7 +23,7 @@ export const portfolio = [
 		image: "/orecette.png",
 		title: "O'Recipes",
 		description:
-			"O-recipes est une application web développée avec React et TypeScript, offrant une architecture moderne et performante. Le projet utilise Vite pour un bundling rapide et efficace, accompagné de Tailwind CSS & DaisyUI pour un design réactif et épuré. Le code est maintenu propre grâce à Biome pour le linting et le formatage. Une intégration continue (CI) est mise en place via GitHub Actions, garantissant un déploiement sans erreur. Enfin, l'application est déployée sur Surge, une solution simple et rapide pour l'hébergement statique. 🍪",
+			"O-recipes est un site web développée avec React et TypeScript, offrant une architecture moderne et performante. Le projet utilise Vite pour un bundling rapide et efficace, accompagné de Tailwind CSS & DaisyUI pour un design réactif et épuré. Le code est maintenu propre grâce à Biome pour le linting et le formatage. Une intégration continue (CI) est mise en place via GitHub Actions, garantissant un déploiement sans erreur. Enfin, l'application est déployée sur Surge, une solution simple et rapide pour l'hébergement statique. 🍪",
 		slug: "Orecipes",
 		github: "https://github.com/Matt7474/O-recette/",
 		site: "https://orecipes.matt-dev.fr/",
