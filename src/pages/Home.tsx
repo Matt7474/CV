@@ -51,7 +51,7 @@ export default function Home() {
 					>
 						Après une réflexion approfondie sur mes envies de carrière, j'ai
 						découvert le métier de développeur et c'est à ce moment que ma
-						passion pour le développement web a véritablement émergé.
+						passion pour le développement web à véritablement émergée.
 						Actuellement en formation pour devenir concepteur développeur
 						fullstack, je suis animé par une détermination sans faille à
 						maîtriser toutes les facettes du développement, du front-end au
@@ -65,7 +65,7 @@ export default function Home() {
 				{/* //----------------------------------------------------------------------------// */}
 				{/* Partie gauche CV */}
 				{/* //----------------------------------------------------------------------------// */}
-				<div className="mt-4 flex p-0.5 mx-4 relative rounded-2xl bg-gradient-to-r from-cyan-500 via-pink-500 to-indigo-800 shadow-emerald-500/20  md:-mr-1 pr-0.5 md:rounded-r-none md:bg-gradient-to-r md:from-cyan-500  md:via-[70%] md:to-pink-500 lg:ml-16 xl:ml-40 2xl:ml-70">
+				<div className="mt-4 flex p-0.5 mx-4 relative rounded-2xl bg-gradient-to-r from-cyan-500 via-pink-500 to-indigo-800 shadow-emerald-500/20  md:-mr-1 pr-0.5 md:rounded-r-none md:bg-gradient-to-r md:from-cyan-500  md:via-[70%] md:to-pink-500 lg:ml-16 xl:ml-40 2xl:ml-70 z-1">
 					<div
 						className={
 							isDarkmode
@@ -255,7 +255,7 @@ export default function Home() {
 								</div>
 								<div className="pl-6">
 									<p className="text-sm md:text-base">
-										JavaScript Vanilla, React
+										JavaScript Vanilla, React, ReactNative
 									</p>
 									<p className="text-sm md:text-base">Tailwind Css, Scss</p>
 									<p className="text-sm md:text-base">TypeScript</p>
@@ -299,7 +299,7 @@ export default function Home() {
 									<p className="text-sm md:text-base">
 										Diagramme : Usecase, sequence, activity
 									</p>
-									<p className="text-sm md:text-base">ERD / MCD, MLD, MPD</p>
+									<p className="text-sm md:text-base">MCD, MLD / ERD, MPD</p>
 								</div>
 							</div>
 						</div>
@@ -491,8 +491,9 @@ export default function Home() {
 						}
 					>
 						<div className="">
-							<div className="flex items-center place-self-center gap-2 pt-4">
-								<h2 className="text-3xl font-semibold 3xl:text-5xl 3xl:font-normal">
+							{/* <div className="flex items-center place-self-center gap-2 pt-4"> */}
+							<div className="flex justify-center items-center text-center pt-4 mx-4">
+								<h2 className="text-3xl font-semibold 3xl:text-5xl 3xl:font-normal pr-4">
 									DIMIER
 								</h2>
 								<h2 className="text-3xl font-semibold 3xl:text-5xl 3xl:font-normal">
@@ -591,7 +592,7 @@ export default function Home() {
 									{/* Modal OPQUAST */}
 									{isOpen && (
 										<div
-											className="fixed inset-0  flex items-center justify-center border-b-emerald-300  z-20"
+											className="fixed inset-0  flex items-center justify-center border-b-emerald-300 z-20 "
 											onClick={() => setIsOpen(false)} // Ferme la modal quand tu cliques sur le fond
 											onKeyDown={(e) => {
 												if (e.key === "Enter" || e.key === " ")
@@ -602,14 +603,14 @@ export default function Home() {
 											{/* Contenu de la modal */}
 											{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 											<div
-												className="bg-cyan-500 rounded-2xl shadow-2xl shadow-cyan-700 w-4/5 sm:w-3/4 lg:w-2/3 xl:w-2/7 p-1"
+												className="bg-cyan-500 rounded-2xl shadow-2xl shadow-cyan-700 w-4/5 sm:w-3/4 lg:w-2/3 xl:w-4/7 2xl:w-2/7 p-1"
 												onClick={(e) => e.stopPropagation()} // Empêche la fermeture si on clique sur l'image
 											>
 												{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 												<img
 													src="/certificat-opquast.png" // Met le bon chemin de l'image
 													alt="Certification OPQUAST"
-													className="rounded-xl w-full h-auto object-cover max-h-[80vh]"
+													className="rounded-xl w-full h-auto object-cover max-h-[80vh] "
 													onClick={() => setIsOpen(false)}
 												/>
 											</div>

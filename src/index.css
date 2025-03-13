@@ -1,8 +1,25 @@
 @import "tailwindcss";
+@plugin "daisyui";
 @theme {
 	--breakpoint-3xl: 100rem;
 	--breakpoint-4xl: 150rem;
 }
+
+/* ANIMATION FLASH */
+@keyframes flash {
+	from {
+		opacity: 0.8;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+.animate-flash {
+	animation: flash 0.2s ease-out;
+}
+/* FIN ANIMATION FLASH */
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

@@ -7,8 +7,14 @@ import useDarkMode from "./store/darkmode";
 import Portfolio from "./pages/Portfolio";
 import Project from "./pages/Project";
 
+import { useState } from "react";
+import AddProject from "./pages/AddProject";
+import LoginSecret from "./pages/Loginsecret";
+import AddProjectDetails from "./pages/AddProjectDetails";
+
 function App() {
 	const { isDarkmode } = useDarkMode();
+	const [isAuthenticated, setIsAuthenticated] = useState(false);
 	return (
 		<div
 			className={
@@ -19,11 +25,36 @@ function App() {
 		>
 			<BrowserRouter>
 				<Navbar />
+
 				<div className="flex-grow">
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/portfolio" element={<Portfolio />} />
 						<Route path="/project/:slug" element={<Project />} />
+						<Route
+							path="/loginsecret"
+							element={<LoginSecret setIsAuthenticated={setIsAuthenticated} />}
+						/>
+						<Route
+							path="/addproject"
+							element={
+								isAuthenticated ? (
+									<AddProject />
+								) : (
+									<LoginSecret setIsAuthenticated={setIsAuthenticated} />
+								)
+							}
+						/>
+						<Route
+							path="/addprojectdetails/:slug"
+							element={
+								isAuthenticated ? (
+									<AddProjectDetails />
+								) : (
+									<LoginSecret setIsAuthenticated={setIsAuthenticated} />
+								)
+							}
+						/>
 					</Routes>
 				</div>
 				<Footer />

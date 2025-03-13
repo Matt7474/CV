@@ -7,7 +7,7 @@ export default function Portfolio() {
 	const { isDarkmode } = useDarkMode();
 
 	return (
-		<div className="pt-20 gap-8 grid justify-center md:grid-cols-2 md:mx-10 lg:grid-cols-3 xl:justify-self-center 2xl:grid-cols-4 3xl:pt-40 4xl:grid-cols-5">
+		<div className="pt-20 gap-8 grid justify-items-center md:grid-cols-2 md:mx-10 lg:grid-cols-3 xl:justify-self-center 2xl:grid-cols-4 3xl:pt-40 4xl:grid-cols-5">
 			{portfolio
 				.slice()
 				.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())

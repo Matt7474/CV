@@ -2,14 +2,13 @@ import { Link, useLocation } from "react-router-dom";
 import useDarkMode from "../store/darkmode";
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
-
 // import useProjects from "../api/useProjects";
 import dayjs from "dayjs";
 import type { iProject } from "../interface/project";
 
-export default function Project() {
+export default function AddProjectDetails() {
 	const location = useLocation();
-	const project = location.state?.project as iProject;
+	const project = location.state as iProject;
 
 	const [isOpen, setIsOpen] = useState(false);
 	const { isDarkmode } = useDarkMode();
@@ -27,7 +26,7 @@ export default function Project() {
 			<div className="pt-4 pl-4 3xl:pl-8">
 				{/* <div className="pb-12"> */}
 				<Link
-					to={"/portfolio"}
+					to={"/addproject"}
 					className={
 						isDarkmode
 							? "text-white flex hover:text-cyan-500  duration-300"
