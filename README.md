@@ -26,5 +26,7 @@ PostgreSQL (en cours): Base de données pour stocker et récupérer les informat
 Vous pouvez me contacter pour toute question ou collaboration via les canaux suivants :
 
 Email : dimier.matt@gmail.com
-LinkedIn : [Votre LinkedIn](https://www.linkedin.com/in/matthieu-dimier-a51539290/)
+
+LinkedIn : [DIMIER Matthieu](https://www.linkedin.com/in/matthieu-dimier-a51539290/)
+
 GitHub : Matt7474
