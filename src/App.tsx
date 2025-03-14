@@ -12,6 +12,7 @@ import AddProject from "./pages/AddProject";
 import LoginSecret from "./pages/Loginsecret";
 import AddProjectDetails from "./pages/AddProjectDetails";
 import MentionsLegales from "./pages/MentionsLegales";
+import Page404 from "./pages/Page404";
 
 function App() {
 	const { isDarkmode } = useDarkMode();
@@ -57,6 +58,7 @@ function App() {
 								)
 							}
 						/>
+						<Route path="*" element={<Page404 />} />
 					</Routes>
 				</div>
 				<Footer />
