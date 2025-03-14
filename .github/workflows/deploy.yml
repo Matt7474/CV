@@ -21,7 +21,7 @@ jobs:
       - name: ⚙️ Setup de l'environnement Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 20
           cache: 'pnpm'
 
       # Installer les dépendances
@@ -36,8 +36,8 @@ jobs:
       - name: Deploy to o2switch
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          ftp-server: ftp.havu2232.odns.fr
-          ftp-username: matt-dev.ftp@apicv.matt-dev.fr
-          ftp-password: matt-dev.mdp
+          ftp-server: ${{ secrets.FTP_SERVER }}
+          ftp-username: ${{ secrets.FTP_USERNAME }}
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist
           remote-dir: /public_html/cv
