@@ -3,12 +3,12 @@ name: Deploy to o2switch
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+  
     steps:
     # Checkout du dépôt
       - name: Checkout code
