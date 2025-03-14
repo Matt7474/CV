@@ -9,35 +9,35 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-  steps:
+    steps:
     # Checkout du dépôt
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    # Installer pnpm
-    - name: Set up pnpm
-      run: npm install -g pnpm
+      # Installer pnpm
+      - name: Set up pnpm
+        run: npm install -g pnpm
 
-    - name: ⚙️ Setup de l'environnement Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 22
-        cache: 'pnpm'
+      - name: ⚙️ Setup de l'environnement Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
 
-    # Installer les dépendances
-    - name: Install dependencies
-      run: pnpm install
+      # Installer les dépendances
+      - name: Install dependencies
+        run: pnpm install
 
-    # Build du projet
-    - name: Build project
-      run: pnpm run build
+      # Build du projet
+      - name: Build project
+        run: pnpm run build
 
-    # Transfert des fichiers sur o2switch via FTP
-    - name: Deploy to o2switch
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
-      with:
-        ftp-server: ftp.havu2232.odns.fr
-        ftp-username: matt-dev.ftp@apicv.matt-dev.fr
-        ftp-password: matt-dev.mdp
-        local-dir: ./dist
-        remote-dir: /public_html/cv
+      # Transfert des fichiers sur o2switch via FTP
+      - name: Deploy to o2switch
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with:
+          ftp-server: ftp.havu2232.odns.fr
+          ftp-username: matt-dev.ftp@apicv.matt-dev.fr
+          ftp-password: matt-dev.mdp
+          local-dir: ./dist
+          remote-dir: /public_html/cv
