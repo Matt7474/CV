@@ -224,7 +224,7 @@ export default function AddProject() {
 	// if (error) return <p>Erreur : {error}</p>;
 
 	return (
-		<div className="mt-40 gap-8 grid grid-cols-1 justify-items-center justify-center sm:grid-cols-2 sm:px-4 lg:grid-cols-3 xl:grid-cols-4 4xl:grid-cols-5:">
+		<div className="mt-40 gap-8 grid grid-cols-1 justify-items-center justify-center sm:grid-cols-2 sm:px-4 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 2xl:mx-30 3xl:mx-50 3xl:grid-cols-5 4xl:mx-100 4xl:mt-60">
 			{portfolio
 				.slice()
 				.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -281,8 +281,8 @@ export default function AddProject() {
 				onClick={() => setIsOpen(true)}
 				className={
 					isDarkmode
-						? "max-w-80 border border-cyan-400 rounded-xl p-4 flex flex-col justify-center items-center text-white cursor-pointer"
-						: "max-w-80 border border-amber-300 rounded-xl p-4 flex flex-col justify-center items-center text-black cursor-pointer"
+						? "max-w-80 border border-cyan-400 rounded-xl p-4 flex flex-col justify-center items-center text-white cursor-pointer 3xl:min-w-65 4xl:min-w-80"
+						: "max-w-80 border border-amber-300 rounded-xl p-4 flex flex-col justify-center items-center text-black cursor-pointer 3xl:min-w-65 4xl:min-w-80"
 				}
 			>
 				<div

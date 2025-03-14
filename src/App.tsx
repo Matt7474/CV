@@ -11,6 +11,7 @@ import { useState } from "react";
 import AddProject from "./pages/AddProject";
 import LoginSecret from "./pages/Loginsecret";
 import AddProjectDetails from "./pages/AddProjectDetails";
+import MentionsLegales from "./pages/MentionsLegales";
 
 function App() {
 	const { isDarkmode } = useDarkMode();
@@ -31,6 +32,7 @@ function App() {
 						<Route path="/" element={<Home />} />
 						<Route path="/portfolio" element={<Portfolio />} />
 						<Route path="/project/:slug" element={<Project />} />
+						<Route path="/mentionslegales" element={<MentionsLegales />} />
 						<Route
 							path="/loginsecret"
 							element={<LoginSecret setIsAuthenticated={setIsAuthenticated} />}

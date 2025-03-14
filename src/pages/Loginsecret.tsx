@@ -22,7 +22,7 @@ export default function LoginSecret({ setIsAuthenticated }: LoginSecretProps) {
 			navigate("/addproject");
 		} else {
 			alert(
-				"Protego ! Votre sort de hacking rebondit et vous frappe en retour. 🪄 Dobby ne veut pas que vous entriez ici. Dobby bloque l’accès !",
+				"Expelliarmus ! Vous avez été désarmé, votre sort de hacking rebondit et vous frappe en retour. 🪄 Dobby ne veut pas que vous entriez ici. Dobby bloque l’accès !",
 			);
 			console.log("Expelliarmus 🪄");
 		}
