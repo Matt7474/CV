@@ -32,11 +32,9 @@ jobs:
       - name: Build project
         run: pnpm run build
 
-      # Debug: Vérification des secrets (à retirer après test)
-      - name: Debug Secrets
-        run: |
-          echo "FTP_SERVER=${{ secrets.FTP_SERVER }}"
-          echo "FTP_USERNAME=${{ secrets.FTP_USERNAME }}"
+      # Vérification du contenu du dossier dist
+      - name: Vérifier le contenu du dossier dist
+        run: ls -l dist || echo "Le dossier dist est vide ou n'existe pas !"
 
       # Transfert des fichiers sur o2switch via FTP
       - name: Deploy to o2switch
@@ -45,5 +43,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist
+          local-dir: dist
           server-dir: /public_html/cv
