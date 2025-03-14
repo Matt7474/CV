@@ -60,7 +60,7 @@ export default function LoginSecret({ setIsAuthenticated }: LoginSecretProps) {
 					<input
 						type="text"
 						id="user"
-						className="bg-gray-200 p-2 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-emerald-400"
+						className="bg-gray-200 p-2 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-emerald-400 !text-gray-600"
 						aria-label="Nom d'utilisateur"
 						value={user}
 						onChange={(e) => setUser(e.target.value)}
@@ -75,7 +75,7 @@ export default function LoginSecret({ setIsAuthenticated }: LoginSecretProps) {
 					<input
 						type="password"
 						id="password"
-						className="bg-gray-200 p-2 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-emerald-400"
+						className="bg-gray-200 p-2 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-emerald-400 !text-gray-600"
 						aria-label="Mot de passe"
 						value={password}
 						onChange={(e) => setPassword(e.target.value)}
