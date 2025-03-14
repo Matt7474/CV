@@ -36,8 +36,8 @@ jobs:
       - name: Deploy to o2switch
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          ftp-server: ${{ secrets.FTP_SERVER }}
-          ftp-username: ${{ secrets.FTP_USERNAME }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /public_html/cv
           remote-dir: /public_html/cv
