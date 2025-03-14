@@ -13,7 +13,7 @@
 // 	bdd: string[];
 // 	created_at: string;
 // 	updated_at: string;
-// }
+// };
 
 // project en local
 export interface iProject {
