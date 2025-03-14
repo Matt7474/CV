@@ -1,4 +1,3 @@
-import { useState } from "react";
 import useDarkMode from "../store/darkmode";
 
 export default function MentionsLegales() {
