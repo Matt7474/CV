@@ -42,7 +42,7 @@ export const portfolio = [
 		image: "/cv.png",
 		title: "CV",
 		description:
-			"CV est un site web développée avec React et TypeScript. Le projet utilise Vite pour un bundling rapide et efficace, accompagné de Tailwind CSS & DaisyUI pour un design réactif et épuré. Le code est maintenu propre grâce à Biome pour le linting et le formatage. Le site utilise une API perso (en maintenance) pour charger les données du portfolio. Enfin, le site est déployée sur o2switch, une solution simple et rapide pour l'hébergement statique. 📄",
+			"CV est un site web développée avec React et TypeScript. Le projet utilise Vite pour un bundling rapide et efficace, accompagné de Tailwind CSS & DaisyUI pour un design réactif et épuré. Le code est maintenu propre grâce à Biome pour le linting et le formatage. Le site utilise une API perso (en maintenance) pour charger les données du portfolio. Enfin, le site est déployée sur o2switch, une solution simple et rapide pour l'hébergement statique et l'intégration continue (CI) via GitHub Actions automatise la mise à jour des fichiers sur o2Switch. 📄",
 		slug: "cv",
 		github: "https://github.com/Matt7474/cv/",
 		site: "https://cv.matt-dev.fr/",
