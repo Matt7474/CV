@@ -135,18 +135,22 @@ export default function Project() {
 						// }
 					>
 						<div className="flex flex-col">
-							<a
-								href="https://github.com/Matt7474/oCoffee"
-								target="_blank"
-								rel="noreferrer"
-								className={
-									isDarkmode
-										? "underline hover:text-emerald-300"
-										: "underline hover:text-cyan-400"
-								}
-							>
-								Lien vers Github
-							</a>
+							{project.github ? (
+								<a
+									href={project.github}
+									target="_blank"
+									rel="noreferrer"
+									className={
+										isDarkmode
+											? "underline hover:text-emerald-300"
+											: "underline hover:text-cyan-400"
+									}
+								>
+									Lien vers Github
+								</a>
+							) : (
+								<p>Lien vers Github disponible</p>
+							)}
 							{project.site ? (
 								<a
 									href={project.site}
