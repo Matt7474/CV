@@ -8,26 +8,43 @@ Bienvenue sur mon CV et portfolio en ligne ! Ce projet présente mes compétence
 Ce site web est conçu pour servir de CV interactif et de portfolio pour présenter mon parcours, mes compétences techniques et mes réalisations. Il inclut les sections suivantes :
 
 Compétences : Une liste de mes compétences techniques et personnelles.
+
 Projets : Une galerie de projets sur lesquels j'ai travaillé.
+
 Contact : Des informations pour me contacter.
+
 Le site est développé en React, avec des outils modernes tels que Vite, Tailwind CSS et DaisyUI.
 
 
 🚀 <strong>Fonctionnalités :</strong>
 
 Page d'accueil dynamique : Présentation de mon profil, avec une interface claire et professionnelle.
+
 Responsive design : Le site s'adapte aux différentes tailles d'écran (mobile, tablette, desktop).
+
 Section Projets : Un espace où je présente mes projets récents avec des liens vers leurs descriptions complètes.
+
 Téléchargement de CV en PDF : Vous pouvez télécharger mon CV en format PDF directement depuis le site.
+
 Formulaire de contact : Permet aux utilisateurs de me contacter directement via un formulaire.
 
 
 🛠️ <strong>Technologies utilisées :</strong>
 
 React : Framework JavaScript pour la création de l'interface utilisateur.
+
 Vite : Outil de build rapide pour le développement et la production.
+
 Tailwind CSS : Framework CSS utilitaire pour créer des interfaces élégantes et responsives.
+
 PostgreSQL (en cours): Base de données pour stocker et récupérer les informations de mes projets.
+
+
+💾<strong>Hebergement :</strong>
+
+o2Switch : Hébergeur tout-en-un utilisé pour déployer mon site et mon API.
+
+Déploiement : L'intégration continue (CI) via GitHub Actions automatise la mise à jour des fichiers sur o2Switch après chaque modification validée.
 
 
 📫 <strong>Contact :</strong>
