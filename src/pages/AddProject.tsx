@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 // import { projects } from "../data";
 import useDarkMode from "../store/darkmode";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import { portfolio } from "../data/portfolio";
+// import { portfolio } from "../data/portfolio";
 import { CirclePlus, Pencil, Trash2 } from "lucide-react";
 import dayjs from "dayjs";
 import type { iProject } from "../types/projects";
@@ -35,6 +35,23 @@ export default function AddProject() {
 	const [inputBack, setInputBack] = useState("");
 	const [inputFullstack, setInputFullstack] = useState("");
 	const [inputBDD, setInputBDD] = useState("");
+
+	const [projects, setProjects] = useState<iProject[]>([]);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const response = await fetch("https://apicv.matt-dev.fr/api/projects");
+				const json = await response.json();
+
+				setProjects(json);
+			} catch (e) {
+				console.error("Error fetching data:", e);
+			}
+		};
+
+		fetchData();
+	}, []);
 
 	// Fonctions pour ajouter des technologies
 	const addTechnoConception = () => {
@@ -173,13 +190,13 @@ export default function AddProject() {
 		const baseUrl = import.meta.env.VITE_BASE_URL;
 
 		// Vérification des données envoyées
-		console.log({
-			technoConception,
-			technoFront,
-			technoBack,
-			technoFullstack,
-			technoBDD,
-		});
+		// console.log({
+		// 	technoConception,
+		// 	technoFront,
+		// 	technoBack,
+		// 	technoFullstack,
+		// 	technoBDD,
+		// });
 
 		try {
 			const response = await fetch(
@@ -225,7 +242,7 @@ export default function AddProject() {
 
 	return (
 		<div className="mt-40 gap-8 grid grid-cols-1 justify-items-center justify-center sm:grid-cols-2 sm:px-4 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 2xl:mx-30 3xl:mx-50 3xl:grid-cols-5 4xl:mx-100 4xl:mt-60">
-			{portfolio
+			{projects
 				.slice()
 				.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 				.map((project) => (

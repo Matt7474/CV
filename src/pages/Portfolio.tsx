@@ -1,10 +1,28 @@
 import { Link } from "react-router-dom";
-import { portfolio } from "../data/portfolio";
+// import { portfolio } from "../data/portfolio";
 import useDarkMode from "../store/darkmode";
 import dayjs from "dayjs";
+import { useEffect, useState } from "react";
+import type { iProject } from "../interface/project";
 
 export default function Portfolio() {
 	const { isDarkmode } = useDarkMode();
+	const [projects, setProjects] = useState<iProject[]>([]);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const response = await fetch("https://apicv.matt-dev.fr/api/projects");
+				const json = await response.json();
+
+				setProjects(json);
+			} catch (e) {
+				console.error("Error fetching data:", e);
+			}
+		};
+
+		fetchData();
+	}, []);
 
 	return (
 		<div className="justify-items-center mt-10 -mb-10">
@@ -18,7 +36,7 @@ export default function Portfolio() {
 				Certains de mes projets réalisés
 			</h1>
 			<div className="pt-10 gap-8 grid justify-items-center md:grid-cols-2 md:mx-10 lg:grid-cols-3 xl:justify-self-center 2xl:grid-cols-4 mt-10 4xl:grid-cols-5">
-				{portfolio
+				{projects
 					.slice()
 					.sort(
 						(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),

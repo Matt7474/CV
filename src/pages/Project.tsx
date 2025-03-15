@@ -216,12 +216,12 @@ export default function Project() {
 						>
 							Conception
 						</p>
-						{project.techno.conception?.map((conception: string) => (
+						{/* {project.techno.conception?.map((conception: string) => (
+							<li key={conception}>{conception}</li>
+						))} */}
+						{project.conception?.map((conception: string) => (
 							<li key={conception}>{conception}</li>
 						))}
-						{/* {project.conception?.map((conception: string) => (
-						<li key={conception}>{conception}</li>
-					))} */}
 					</ul>
 
 					<ul
@@ -245,12 +245,12 @@ export default function Project() {
 						>
 							Front
 						</p>
-						{project.techno.front?.map((front: string) => (
+						{/* {project.techno.front?.map((front: string) => (
+							<li key={front}>{front}</li>
+						))} */}
+						{project.front?.map((front: string) => (
 							<li key={front}>{front}</li>
 						))}
-						{/* {project.front?.map((front: string) => (
-						<li key={front}>{front}</li>
-					))} */}
 					</ul>
 					<ul
 						className={
@@ -273,12 +273,12 @@ export default function Project() {
 						>
 							Back
 						</p>
-						{project.techno.back?.map((back: string) => (
+						{/* {project.techno.back?.map((back: string) => (
+							<li key={back}>{back}</li>
+						))} */}
+						{project.back?.map((back: string) => (
 							<li key={back}>{back}</li>
 						))}
-						{/* {project.back?.map((back: string) => (
-						<li key={back}>{back}</li>
-					))} */}
 					</ul>
 					<ul
 						className={
@@ -300,12 +300,12 @@ export default function Project() {
 						>
 							FullStack
 						</p>
-						{project.techno.fullstack?.map((fullstack: string) => (
+						{/* {project.techno.fullstack?.map((fullstack: string) => (
+							<li key={fullstack}>{fullstack}</li>
+						))} */}
+						{project.fullstack.map((fullstack: string) => (
 							<li key={fullstack}>{fullstack}</li>
 						))}
-						{/* {project.fullstack.map((fullstack: string) => (
-						<li key={fullstack}>{fullstack}</li>
-					))} */}
 					</ul>
 					<ul
 						className={
@@ -328,12 +328,12 @@ export default function Project() {
 						>
 							BDD
 						</p>
-						{project.techno.bdd?.map((bdd: string) => (
+						{/* {project.techno.bdd?.map((bdd: string) => (
+							<li key={bdd}>{bdd}</li>
+						))} */}
+						{project.bdd?.map((bdd: string) => (
 							<li key={bdd}>{bdd}</li>
 						))}
-						{/* {project.bdd?.map((bdd: string) => (
-						<li key={bdd}>{bdd}</li>
-					))} */}
 					</ul>
 				</div>
 			</section>

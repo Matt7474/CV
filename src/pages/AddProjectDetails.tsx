@@ -211,7 +211,7 @@ export default function AddProjectDetails() {
 						>
 							Conception
 						</p>
-						{project.techno.conception?.map((conception: string) => (
+						{project.conception?.map((conception: string) => (
 							<li key={conception}>{conception}</li>
 						))}
 						{/* {project.conception?.map((conception: string) => (
@@ -240,7 +240,7 @@ export default function AddProjectDetails() {
 						>
 							Front
 						</p>
-						{project.techno.front?.map((front: string) => (
+						{project.front?.map((front: string) => (
 							<li key={front}>{front}</li>
 						))}
 						{/* {project.front?.map((front: string) => (
@@ -268,7 +268,7 @@ export default function AddProjectDetails() {
 						>
 							Back
 						</p>
-						{project.techno.back?.map((back: string) => (
+						{project.back?.map((back: string) => (
 							<li key={back}>{back}</li>
 						))}
 						{/* {project.back?.map((back: string) => (
@@ -295,7 +295,7 @@ export default function AddProjectDetails() {
 						>
 							FullStack
 						</p>
-						{project.techno.fullstack?.map((fullstack: string) => (
+						{project.fullstack?.map((fullstack: string) => (
 							<li key={fullstack}>{fullstack}</li>
 						))}
 						{/* {project.fullstack.map((fullstack: string) => (
@@ -323,7 +323,7 @@ export default function AddProjectDetails() {
 						>
 							BDD
 						</p>
-						{project.techno.bdd?.map((bdd: string) => (
+						{project.bdd?.map((bdd: string) => (
 							<li key={bdd}>{bdd}</li>
 						))}
 						{/* {project.bdd?.map((bdd: string) => (
