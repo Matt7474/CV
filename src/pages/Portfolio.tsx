@@ -55,7 +55,7 @@ export default function Portfolio() {
 							<div>
 								<img
 									className="w-100 aspect-4/3 border-transparent rounded-xl object-cover"
-									src={`${project.image}?t=${new Date().getTime()}`}
+									src={`https://apicv.matt-dev.fr${project.image}`}
 									alt={`image-projet-${project.title}`}
 								/>
 								<h2 className="text-2xl font-bold my-4">{project.title}</h2>

@@ -45,6 +45,7 @@ export default function AddProject() {
 				const json = await response.json();
 
 				setProjects(json);
+				console.log(json);
 			} catch (e) {
 				console.error("Error fetching data:", e);
 			}
@@ -130,13 +131,13 @@ export default function AddProject() {
 		formData.append("fullstack", JSON.stringify(technoFullstack));
 		formData.append("bdd", JSON.stringify(technoBDD));
 
-		const baseUrl = import.meta.env.VITE_BASE_URL;
 		console.log({
 			image,
 			title,
 			description,
 			slug,
 			github,
+			site,
 			date,
 			technoConception: technoConception.join(","),
 			technoFront: technoFront.join(","),
@@ -146,7 +147,7 @@ export default function AddProject() {
 		});
 
 		try {
-			const response = await fetch(`${baseUrl}/projects`, {
+			const response = await fetch("https://apicv.matt-dev.fr/api/projects/", {
 				method: "POST",
 				body: formData,
 			});
@@ -172,9 +173,12 @@ export default function AddProject() {
 		}
 
 		try {
-			const response = await fetch(`${baseUrl}/projects/${slug}`, {
-				method: "DELETE",
-			});
+			const response = await fetch(
+				`https://apicv.matt-dev.fr/api/projects/${slug}`,
+				{
+					method: "DELETE",
+				},
+			);
 
 			if (!response.ok) {
 				throw new Error("Erreur lors de la suppression du projet");
@@ -210,7 +214,6 @@ export default function AddProject() {
 						slug,
 						github,
 						site,
-
 						date,
 						oldSlug: currentProject.slug,
 						technoConception,
@@ -259,7 +262,9 @@ export default function AddProject() {
 						<div>
 							<img
 								className="w-100 aspect-4/3 border-transparent rounded-xl object-cover"
-								src={`${project.image}?t=${new Date().getTime()}`}
+								// src={`${project.image}?t=${new Date().getTime()}`}
+								// alt={`image-projet-${project.title}`}
+								src={`https://apicv.matt-dev.fr${project.image}`}
 								alt={`image-projet-${project.title}`}
 							/>
 
@@ -412,7 +417,6 @@ export default function AddProject() {
 												value={github}
 												onChange={(e) => setGithub(e.target.value)}
 												placeholder="https://github.com/..."
-												required
 											/>
 										</div>
 
@@ -424,10 +428,9 @@ export default function AddProject() {
 												type="url"
 												id="site"
 												className="input input-bordered w-full placeholder-gray-400"
-												value={github}
+												value={site}
 												onChange={(e) => setSite(e.target.value)}
 												placeholder="https://mon-site.com/..."
-												required
 											/>
 										</div>
 

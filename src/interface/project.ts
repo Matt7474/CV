@@ -4,6 +4,7 @@ export interface iProject {
 	title: string;
 	slug: string;
 	github: string | null;
+	site: string | null;
 	description: string;
 	date: string;
 	conception: string[];

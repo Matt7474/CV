@@ -63,7 +63,7 @@ export default function AddProjectDetails() {
 					{/* <div className="w-1/3 cursor-pointer" onClick={() => setIsOpen(true)}> */}
 					<img
 						// src={`http://localhost:3010${project.image}?t=${new Date().getTime()}`}
-						src={`${project.image}?t=${new Date().getTime()}`}
+						src={`https://apicv.matt-dev.fr${project.image}`}
 						alt={`image-projet-${project.title}`}
 						className={
 							isDarkmode
@@ -98,7 +98,7 @@ export default function AddProjectDetails() {
 								{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 								<img
 									// src={`http://localhost:3010${project.image}?t=${new Date().getTime()}`}
-									src={`${project.image}?t=${new Date().getTime()}`}
+									src={`https://apicv.matt-dev.fr${project.image}`}
 									alt={`image-projet-${project.title}`}
 									className="rounded-xl w-full h-auto object-cover max-h-[80vh]"
 									onClick={() => setIsOpen(false)} // Ferme la modal quand tu cliques sur l'image
@@ -134,18 +134,22 @@ export default function AddProjectDetails() {
 						// }
 					>
 						<div className="flex flex-col">
-							<a
-								href="https://github.com/Matt7474/oCoffee"
-								target="_blank"
-								rel="noreferrer"
-								className={
-									isDarkmode
-										? "underline hover:text-emerald-300"
-										: "underline hover:text-cyan-400"
-								}
-							>
-								Lien vers Github
-							</a>
+							{project.github ? (
+								<a
+									href={project.github}
+									target="_blank"
+									rel="noreferrer"
+									className={
+										isDarkmode
+											? "underline hover:text-emerald-300"
+											: "underline hover:text-cyan-400"
+									}
+								>
+									Lien vers Github
+								</a>
+							) : (
+								<p>Lien vers Github non disponible</p>
+							)}
 							{project.site ? (
 								<a
 									href={project.site}
