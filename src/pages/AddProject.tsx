@@ -166,8 +166,6 @@ export default function AddProject() {
 	};
 
 	const deleteProject = async (slug: string) => {
-		const baseUrl = import.meta.env.VITE_BASE_URL;
-
 		if (!window.confirm("Voulez-vous vraiment supprimer ce projet ?")) {
 			return;
 		}
