@@ -147,12 +147,8 @@ export default function AddProject() {
 		});
 
 		try {
-			// const secret = import.meta.env.VITE_SECRET;
 			const response = await fetch("https://apicv.matt-dev.fr/api/projects/", {
 				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
 				body: formData,
 			});
 
@@ -175,15 +171,10 @@ export default function AddProject() {
 		}
 
 		try {
-			const secret = import.meta.env.VITE_SECRET;
 			const response = await fetch(
 				`https://apicv.matt-dev.fr/api/projects/${slug}`,
 				{
 					method: "DELETE",
-					headers: {
-						"Content-Type": "application/json",
-						"X-API-KEY": `${secret}`,
-					},
 				},
 			);
 
@@ -210,16 +201,11 @@ export default function AddProject() {
 		// });
 
 		try {
-			const secret = import.meta.env.VITE_SECRET;
 			const response = await fetch(
 				`${baseUrl}/projects/${currentProject.slug}`,
 				{
 					method: "PATCH",
-					headers: {
-						"Content-Type": "application/json",
-						"X-API-KEY": `${secret}`,
-					},
-
+					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify({
 						title,
 						description,
