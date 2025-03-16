@@ -38,9 +38,11 @@ export default function Portfolio() {
 			<div className="pt-10 gap-8 grid justify-items-center md:grid-cols-2 md:mx-10 lg:grid-cols-3 xl:justify-self-center 2xl:grid-cols-4 mt-10 4xl:grid-cols-5">
 				{projects
 					.slice()
-					.sort(
-						(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-					)
+					.sort((a, b) => {
+						const dateA = a.date ? new Date(a.date).getTime() : 0; // Si a.date est undefined, on donne 0 comme valeur par défaut
+						const dateB = b.date ? new Date(b.date).getTime() : 0; // Pareil pour b.date
+						return dateB - dateA;
+					})
 					.map((project) => (
 						<Link
 							to={`/project/${project.slug}`}
@@ -60,7 +62,7 @@ export default function Portfolio() {
 								/>
 								<h2 className="text-2xl font-bold my-4">{project.title}</h2>
 								<p className="text-xl">
-									{project.description.split(" ").slice(0, 10).join(" ")}...
+									{project.description?.split(" ").slice(0, 10).join(" ")}...
 								</p>
 							</div>
 							<p className="text-xl mt-4 flex justify-between">
