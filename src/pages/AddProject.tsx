@@ -147,12 +147,11 @@ export default function AddProject() {
 		});
 
 		try {
-			const secret = import.meta.env.VITE_SECRET;
+			// const secret = import.meta.env.VITE_SECRET;
 			const response = await fetch("https://apicv.matt-dev.fr/api/projects/", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
-					"X-API-KEY": `${secret}`,
 				},
 				body: formData,
 			});
