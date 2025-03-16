@@ -35,7 +35,7 @@ export default function Portfolio() {
 			>
 				Certains de mes projets réalisés
 			</h1>
-			<div className="pt-10 gap-8 grid justify-items-center md:grid-cols-2 md:mx-10 lg:grid-cols-3 xl:justify-self-center 2xl:grid-cols-4 mt-10 4xl:grid-cols-5">
+			<div className="pt-10 gap-8 grid justify-items-center md:grid-cols-2 md:mx-10 lg:grid-cols-3 xl:justify-self-center 2xl:grid-cols-4 mt-10 3xl:flex 3xl:justify-center 4xl:grid-cols-5 ">
 				{projects
 					.slice()
 					.sort((a, b) => {
