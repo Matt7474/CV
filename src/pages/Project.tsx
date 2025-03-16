@@ -303,7 +303,7 @@ export default function Project() {
 						{/* {project.techno.fullstack?.map((fullstack: string) => (
 							<li key={fullstack}>{fullstack}</li>
 						))} */}
-						{project.fullstack.map((fullstack: string) => (
+						{project.fullstack?.map((fullstack: string) => (
 							<li key={fullstack}>{fullstack}</li>
 						))}
 					</ul>
