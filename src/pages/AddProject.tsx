@@ -20,7 +20,7 @@ export default function AddProject() {
 	const [image, setImage] = useState<File | null>(null);
 	const [date, setDate] = useState("");
 	const [isEditMode, setIsEditMode] = useState(false);
-	const [currentProject] = useState<iProject | null>(null);
+	const [currentProject, setCurrentProject] = useState<iProject | null>(null);
 	const [technoConception, setTechnoConception] = useState<string[]>([]);
 	const [technoFront, setTechnoFront] = useState<string[]>([]);
 	const [technoBack, setTechnoBack] = useState<string[]>([]);
@@ -37,20 +37,18 @@ export default function AddProject() {
 	const [inputBDD, setInputBDD] = useState("");
 
 	const [projects, setProjects] = useState<iProject[]>([]);
+	const [projectSlug, setProjectSlug] = useState<string | null>(null);
 
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
 				const response = await fetch("https://apicv.matt-dev.fr/api/projects");
 				const json = await response.json();
-
 				setProjects(json);
-				console.log(json);
 			} catch (e) {
 				console.error("Error fetching data:", e);
 			}
 		};
-
 		fetchData();
 	}, []);
 
@@ -154,6 +152,8 @@ export default function AddProject() {
 
 			if (response.ok) {
 				// Réponse du serveur est correcte
+				const newProject = await response.json();
+				setProjects((prevProjects) => [...prevProjects, newProject]);
 				setIsOpen(false);
 				// Optionnel : Gérer le succès, par exemple afficher un message ou rediriger
 			} else {
@@ -177,8 +177,13 @@ export default function AddProject() {
 					method: "DELETE",
 				},
 			);
-
-			if (!response.ok) {
+			if (response.ok) {
+				// Réponse du serveur est correcte
+				// Mise à jour de l'état pour supprimer le projet de la liste
+				setProjects((prevProjects) =>
+					prevProjects.filter((project) => project.slug !== slug),
+				);
+			} else {
 				throw new Error("Erreur lors de la suppression du projet");
 			}
 		} catch (error) {
@@ -186,19 +191,36 @@ export default function AddProject() {
 		}
 	};
 
+	useEffect(() => {
+		if (isEditMode && projectSlug) {
+			fetch(`https://apicv.matt-dev.fr/api/projects/${projectSlug}`)
+				.then((response) => response.json())
+				.then((data) => {
+					setTitle(data.title);
+					setDescription(data.description);
+					setGithub(data.github);
+					setSite(data.site);
+					setSlug(data.slug);
+					setDate(data.date);
+					setTechnoConception(data.conception || []);
+					setTechnoFront(data.front || []);
+					setTechnoBack(data.back || []);
+					setTechnoFullstack(data.fullstack || []);
+					setTechnoBDD(data.bdd || []);
+				})
+				.catch((error) => {
+					console.error("Erreur lors de la récupération du projet", error);
+				});
+		}
+	}, [isEditMode, projectSlug]);
+
+	// const [oldSlug, setOldSlug] = useState("");
+
 	const updateProject = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		if (!currentProject) return;
 		const baseUrl = import.meta.env.VITE_BASE_URL;
-
-		// Vérification des données envoyées
-		// console.log({
-		// 	technoConception,
-		// 	technoFront,
-		// 	technoBack,
-		// 	technoFullstack,
-		// 	technoBDD,
-		// });
+		console.log(`${baseUrl}/api/projects/${currentProject?.slug}`);
 
 		try {
 			const response = await fetch(
@@ -271,11 +293,15 @@ export default function AddProject() {
 								<div className="flex gap-2">
 									<Pencil
 										className="mt-4 cursor-pointer text-blue-500 hover:text-blue-700"
-										// onClick={(e) => {
-										// 	e.preventDefault();
-										// 	editProject(project);
-										// }}
+										onClick={(e) => {
+											e.preventDefault();
+											setIsEditMode(true);
+											setIsOpen(true);
+											setProjectSlug(project.slug);
+											setCurrentProject(project);
+										}}
 									/>
+
 									<Trash2
 										className="mt-4 cursor-pointer text-red-500 hover:text-red-700"
 										onClick={(e) => {
@@ -344,7 +370,11 @@ export default function AddProject() {
 										{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 										<div
 											className="absolute font-bold text-xl right-4 top-4 cursor-pointer"
-											onClick={() => setIsOpen(false)}
+											onClick={(e) => {
+												e.preventDefault();
+												setIsEditMode(false);
+												setIsOpen(false);
+											}}
 										>
 											X
 										</div>
@@ -356,7 +386,7 @@ export default function AddProject() {
 
 										<div className="form-control">
 											<label className="label" htmlFor="title">
-												<span className="!text-gray-600">Titre</span>
+												<span className="!text-gray-600">Titre *</span>
 											</label>
 											<input
 												type="text"
@@ -371,21 +401,21 @@ export default function AddProject() {
 
 										<div className="form-control mt-2">
 											<label className="label" htmlFor="description">
-												<span className="text-gray-600">Description</span>
+												<span className="text-gray-600">Description *</span>
 											</label>
 											<textarea
 												id="description"
 												className="textarea textarea-bordered w-full placeholder-gray-400"
 												value={description}
 												onChange={(e) => setDescription(e.target.value)}
-												placeholder="Brève description du projet"
+												placeholder="Description du projet"
 												required
 											/>
 										</div>
 
 										<div className="form-control mt-2">
 											<label className="label" htmlFor="slug">
-												<span className="text-gray-600">Slug</span>
+												<span className="text-gray-600">Slug *</span>
 											</label>
 											<input
 												type="text"
@@ -448,7 +478,7 @@ export default function AddProject() {
 
 										<div className="form-control mt-2">
 											<label className="label" htmlFor="date">
-												<span className="text-gray-600">Date du projet</span>
+												<span className="text-gray-600">Date du projet *</span>
 											</label>
 											<input
 												type="date"
@@ -457,6 +487,7 @@ export default function AddProject() {
 												value={date}
 												onChange={(e) => setDate(e.target.value)}
 												placeholder="30/10/1985"
+												required
 											/>
 										</div>
 									</div>
