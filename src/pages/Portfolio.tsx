@@ -25,12 +25,12 @@ export default function Portfolio() {
 	}, []);
 
 	return (
-		<div className="justify-items-center mt-10 -mb-10">
+		<div className="justify-items-center  mt-10 -mb-10">
 			<h1
 				className={
 					isDarkmode
-						? "!text-white text-lg font-semibold 3xl:mt-40"
-						: "!text-black text-lg font-semibold 3xl:mt-40"
+						? "!text-white text-lg font-semibold 3xl:mt-40 flex justify-center"
+						: "!text-black text-lg font-semibold 3xl:mt-40 flex justify-center"
 				}
 			>
 				Certains de mes projets réalisés
