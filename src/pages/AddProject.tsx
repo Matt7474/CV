@@ -39,6 +39,7 @@ export default function AddProject() {
 	const [projects, setProjects] = useState<iProject[]>([]);
 	const [projectSlug, setProjectSlug] = useState<string | null>(null);
 
+	// Chargement des projets
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
@@ -53,62 +54,28 @@ export default function AddProject() {
 	}, []);
 
 	// Fonctions pour ajouter des technologies
-	const addTechnoConception = () => {
-		if (inputConception && !technoConception.includes(inputConception)) {
-			setTechnoConception([...technoConception, inputConception]);
-			setInputConception("");
-		}
-	};
-
-	const addTechnoFront = () => {
-		if (inputFront && !technoFront.includes(inputFront)) {
-			setTechnoFront([...technoFront, inputFront]);
-			setInputFront("");
-		}
-	};
-
-	const addTechnoBack = () => {
-		if (inputBack && !technoBack.includes(inputBack)) {
-			setTechnoBack([...technoBack, inputBack]);
-			setInputBack("");
-		}
-	};
-
-	const addTechnoFullstack = () => {
-		if (inputFullstack && !technoFullstack.includes(inputFullstack)) {
-			setTechnoFullstack([...technoFullstack, inputFullstack]);
-			setInputFullstack("");
-		}
-	};
-
-	const addTechnoBDD = () => {
-		if (inputBDD && !technoBDD.includes(inputBDD)) {
-			setTechnoBDD([...technoBDD, inputBDD]);
-			setInputBDD("");
+	const addTechno = (
+		input: string,
+		setInput: React.Dispatch<React.SetStateAction<string>>,
+		technoList: string[],
+		setTechnoList: React.Dispatch<React.SetStateAction<string[]>>,
+	) => {
+		if (input && !technoList.includes(input)) {
+			setTechnoList([...technoList, input]);
+			setInput("");
 		}
 	};
 
 	// Fonctions pour supprimer des technologies.
-	const removeTechnoConception = (tech: string) => {
-		setTechnoConception(technoConception.filter((t) => t !== tech));
+	const removeTechno = (
+		tech: string,
+		technoList: string[],
+		setTechnoList: React.Dispatch<React.SetStateAction<string[]>>,
+	) => {
+		setTechnoList(technoList.filter((t) => t !== tech));
 	};
 
-	const removeTechnoFront = (tech: string) => {
-		setTechnoFront(technoFront.filter((t) => t !== tech));
-	};
-
-	const removeTechnoBack = (tech: string) => {
-		setTechnoBack(technoBack.filter((t) => t !== tech));
-	};
-
-	const removeTechnoFullstack = (tech: string) => {
-		setTechnoFullstack(technoFullstack.filter((t) => t !== tech));
-	};
-
-	const removeTechnoBDD = (tech: string) => {
-		setTechnoBDD(technoBDD.filter((t) => t !== tech));
-	};
-
+	// Fonctions pour ajouter un projet
 	const addNewProject = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
@@ -165,6 +132,7 @@ export default function AddProject() {
 		}
 	};
 
+	// Fonctions pour supprimer un projet
 	const deleteProject = async (slug: string) => {
 		if (!window.confirm("Voulez-vous vraiment supprimer ce projet ?")) {
 			return;
@@ -191,6 +159,7 @@ export default function AddProject() {
 		}
 	};
 
+	// chargement des données pour pré-remplir le formulaire avant update
 	useEffect(() => {
 		if (isEditMode && projectSlug) {
 			fetch(`https://apicv.matt-dev.fr/api/projects/${projectSlug}`)
@@ -214,8 +183,7 @@ export default function AddProject() {
 		}
 	}, [isEditMode, projectSlug]);
 
-	// const [oldSlug, setOldSlug] = useState("");
-
+	// Fonctions pour modifier un projet
 	const updateProject = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		if (!currentProject) return;
@@ -255,13 +223,6 @@ export default function AddProject() {
 			console.error(error);
 		}
 	};
-
-	// Fonction pour ajouter une technologie à la liste
-
-	// Fonction pour supprimer une technologie
-
-	// if (loading) return <p>Chargement des projets...</p>;
-	// if (error) return <p>Erreur : {error}</p>;
 
 	return (
 		<div className="mt-40 gap-8 grid grid-cols-1 justify-items-center justify-center sm:grid-cols-2 sm:px-4 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 2xl:mx-30 3xl:mx-50 3xl:grid-cols-5 4xl:mx-100 4xl:mt-60">
@@ -366,7 +327,7 @@ export default function AddProject() {
 								className="space-y-4 p-6 bg-white rounded-lg shadow-lg max-w-2xl relative"
 							>
 								<div className="flex flex-col lg:flex-row lg:gap-4">
-									<div className="max-w-1/2 ">
+									<div className=" lg:w-1/2">
 										{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 										<div
 											className="absolute font-bold text-xl right-4 top-4 cursor-pointer"
@@ -378,7 +339,7 @@ export default function AddProject() {
 										>
 											X
 										</div>
-										<h2 className="text-2xl font-bold text-center lg:mb-6">
+										<h2 className="text-2xl font-bold text-center lg:mb-6 my-6">
 											{isEditMode
 												? "Modifier le projet"
 												: "Ajouter un nouveau projet"}
@@ -491,7 +452,7 @@ export default function AddProject() {
 											/>
 										</div>
 									</div>
-									<div className="max-w-1/2 lg:mt-12">
+									<div className="lg:mt-18 lg:w-1/2">
 										{/* Gestion des technologies */}
 										<div className="form-control mt-2 ">
 											<label className="label" htmlFor="technoConception">
@@ -513,23 +474,31 @@ export default function AddProject() {
 													className={
 														isDarkmode ? "btn btn-success" : "btn btn-secondary"
 													}
-													onClick={addTechnoConception}
+													onClick={() =>
+														addTechno(
+															inputConception,
+															setInputConception,
+															technoConception,
+															setTechnoConception,
+														)
+													}
 												>
 													Ajouter
 												</button>
 											</div>
-											<div className="flex gap-2 mt-2 flex-wrap flex-wrap">
-												{technoConception.map((technoConception) => (
-													<span
-														key={technoConception}
-														className="badge badge-outline"
-													>
-														{technoConception}
+											<div className="flex gap-2 mt-2 flex-wrap">
+												{technoConception.map((techno) => (
+													<span key={techno} className="badge badge-outline">
+														{techno}
 														<button
 															type="button"
 															className="ml-2 text-red-500"
 															onClick={() =>
-																removeTechnoConception(technoConception)
+																removeTechno(
+																	techno,
+																	technoConception,
+																	setTechnoConception,
+																)
 															}
 														>
 															X
@@ -560,22 +529,32 @@ export default function AddProject() {
 													className={
 														isDarkmode ? "btn btn-success" : "btn btn-secondary"
 													}
-													onClick={addTechnoFront}
+													onClick={() =>
+														addTechno(
+															inputFront,
+															setInputFront,
+															technoFront,
+															setTechnoFront,
+														)
+													}
 												>
 													Ajouter
 												</button>
 											</div>
 											<div className="flex gap-2 mt-2 flex-wrap">
-												{technoFront.map((technoFront) => (
-													<span
-														key={technoFront}
-														className="badge badge-outline"
-													>
-														{technoFront}
+												{technoFront.map((techno) => (
+													<span key={techno} className="badge badge-outline">
+														{techno}
 														<button
 															type="button"
 															className="ml-2 text-red-500"
-															onClick={() => removeTechnoFront(technoFront)}
+															onClick={() =>
+																removeTechno(
+																	techno,
+																	technoFront,
+																	setTechnoFront,
+																)
+															}
 														>
 															X
 														</button>
@@ -604,22 +583,28 @@ export default function AddProject() {
 													className={
 														isDarkmode ? "btn btn-success" : "btn btn-secondary"
 													}
-													onClick={addTechnoBack}
+													onClick={() =>
+														addTechno(
+															inputBack,
+															setInputBack,
+															technoBack,
+															setTechnoBack,
+														)
+													}
 												>
 													Ajouter
 												</button>
 											</div>
 											<div className="flex gap-2 mt-2 flex-wrap">
-												{technoBack.map((technoBack) => (
-													<span
-														key={technoBack}
-														className="badge badge-outline"
-													>
-														{technoBack}
+												{technoBack.map((techno) => (
+													<span key={techno} className="badge badge-outline">
+														{techno}
 														<button
 															type="button"
 															className="ml-2 text-red-500"
-															onClick={() => removeTechnoBack(technoBack)}
+															onClick={() =>
+																removeTechno(techno, technoBack, setTechnoBack)
+															}
 														>
 															X
 														</button>
@@ -649,23 +634,31 @@ export default function AddProject() {
 													className={
 														isDarkmode ? "btn btn-success" : "btn btn-secondary"
 													}
-													onClick={addTechnoFullstack}
+													onClick={() =>
+														addTechno(
+															inputFullstack,
+															setInputFullstack,
+															technoFullstack,
+															setTechnoFullstack,
+														)
+													}
 												>
 													Ajouter
 												</button>
 											</div>
 											<div className="flex gap-2 mt-2 flex-wrap">
-												{technoFullstack.map((technoFullstack) => (
-													<span
-														key={technoFullstack}
-														className="badge badge-outline"
-													>
-														{technoFullstack}
+												{technoFullstack.map((techno) => (
+													<span key={techno} className="badge badge-outline">
+														{techno}
 														<button
 															type="button"
 															className="ml-2 text-red-500"
 															onClick={() =>
-																removeTechnoFullstack(technoFullstack)
+																removeTechno(
+																	techno,
+																	technoFullstack,
+																	setTechnoFullstack,
+																)
 															}
 														>
 															X
@@ -694,19 +687,28 @@ export default function AddProject() {
 													className={
 														isDarkmode ? "btn btn-success" : "btn btn-secondary"
 													}
-													onClick={addTechnoBDD}
+													onClick={() =>
+														addTechno(
+															inputBDD,
+															setInputBDD,
+															technoBDD,
+															setTechnoBDD,
+														)
+													}
 												>
 													Ajouter
 												</button>
 											</div>
 											<div className="flex gap-2 mt-2 flex-wrap">
-												{technoBDD.map((technoBDD) => (
-													<span key={technoBDD} className="badge badge-outline">
-														{technoBDD}
+												{technoBDD.map((techno) => (
+													<span key={techno} className="badge badge-outline">
+														{techno}
 														<button
 															type="button"
 															className="ml-2 text-red-500"
-															onClick={() => removeTechnoBDD(technoBDD)}
+															onClick={() =>
+																removeTechno(techno, technoBDD, setTechnoBDD)
+															}
 														>
 															X
 														</button>
