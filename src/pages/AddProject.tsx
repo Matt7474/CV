@@ -366,7 +366,7 @@ export default function AddProject() {
 								className="space-y-4 p-6 bg-white rounded-lg shadow-lg max-w-2xl relative"
 							>
 								<div className="flex flex-col lg:flex-row lg:gap-4">
-									<div className="w-1/1">
+									<div className="max-w-1/2 ">
 										{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 										<div
 											className="absolute font-bold text-xl right-4 top-4 cursor-pointer"
@@ -491,11 +491,11 @@ export default function AddProject() {
 											/>
 										</div>
 									</div>
-									<div className="w-1/1 lg:mt-12">
+									<div className="max-w-1/2 lg:mt-12">
 										{/* Gestion des technologies */}
-										<div className="form-control mt-2">
+										<div className="form-control mt-2 ">
 											<label className="label" htmlFor="technoConception">
-												<span className="text-gray-600">
+												<span className="text-gray-600 ">
 													Technologies de Conception
 												</span>
 											</label>
@@ -518,7 +518,7 @@ export default function AddProject() {
 													Ajouter
 												</button>
 											</div>
-											<div className="flex gap-2 mt-2">
+											<div className="flex gap-2 mt-2 flex-wrap flex-wrap">
 												{technoConception.map((technoConception) => (
 													<span
 														key={technoConception}
@@ -565,7 +565,7 @@ export default function AddProject() {
 													Ajouter
 												</button>
 											</div>
-											<div className="flex gap-2 mt-2">
+											<div className="flex gap-2 mt-2 flex-wrap">
 												{technoFront.map((technoFront) => (
 													<span
 														key={technoFront}
@@ -609,7 +609,7 @@ export default function AddProject() {
 													Ajouter
 												</button>
 											</div>
-											<div className="flex gap-2 mt-2">
+											<div className="flex gap-2 mt-2 flex-wrap">
 												{technoBack.map((technoBack) => (
 													<span
 														key={technoBack}
@@ -654,7 +654,7 @@ export default function AddProject() {
 													Ajouter
 												</button>
 											</div>
-											<div className="flex gap-2 mt-2">
+											<div className="flex gap-2 mt-2 flex-wrap">
 												{technoFullstack.map((technoFullstack) => (
 													<span
 														key={technoFullstack}
@@ -699,7 +699,7 @@ export default function AddProject() {
 													Ajouter
 												</button>
 											</div>
-											<div className="flex gap-2 mt-2">
+											<div className="flex gap-2 mt-2 flex-wrap">
 												{technoBDD.map((technoBDD) => (
 													<span key={technoBDD} className="badge badge-outline">
 														{technoBDD}
