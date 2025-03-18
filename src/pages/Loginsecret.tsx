@@ -3,7 +3,7 @@ import useDarkMode from "../store/darkmode";
 import { useNavigate } from "react-router-dom";
 
 interface LoginSecretProps {
-	setIsAuthenticated: (auth: boolean) => void; // Le type de setIsAuthenticated
+	setIsAuthenticated: (auth: boolean) => void;
 }
 
 export default function LoginSecret({ setIsAuthenticated }: LoginSecretProps) {

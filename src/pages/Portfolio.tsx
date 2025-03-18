@@ -9,23 +9,46 @@ export default function Portfolio() {
 	const { isDarkmode } = useDarkMode();
 	const [isLoading, setIsLoading] = useState(false);
 	const [projects, setProjects] = useState<iProject[]>([]);
+	const [refreshKey, setRefreshKey] = useState(0);
 
+	// Chargement des projets
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		setIsLoading(true);
+
 		const fetchData = async () => {
 			try {
 				const response = await fetch("https://apicv.matt-dev.fr/api/projects");
-				const json = await response.json();
 
-				setProjects(json);
-				setIsLoading(false);
+				if (response.ok) {
+					const json = await response.json();
+					setProjects(json);
+					setIsLoading(false);
+				} else {
+					throw new Error("API non disponible");
+				}
 			} catch (e) {
 				console.error("Error fetching data:", e);
+
+				// Vérifie toutes les 5 secondes si l'API est de retour
+				const interval = setInterval(async () => {
+					try {
+						const retryResponse = await fetch(
+							"https://apicv.matt-dev.fr/api/projects",
+						);
+						if (retryResponse.ok) {
+							clearInterval(interval);
+							setRefreshKey((prevKey) => prevKey + 1); // Change la clé pour forcer un re-render
+						}
+					} catch (error) {
+						console.log("API toujours indisponible, nouvelle tentative...");
+					}
+				}, 1000);
 			}
 		};
 
 		fetchData();
-	}, []);
+	}, [refreshKey]); // Déclenche un nouveau fetch quand refreshKey change
 
 	return (
 		<div>
