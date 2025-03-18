@@ -140,6 +140,10 @@ export default function AddProject() {
 		try {
 			const response = await fetch("https://apicv.matt-dev.fr/api/projects/", {
 				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+					"X-API-KEY": "mon_token_secret",
+				},
 				body: formData,
 			});
 
