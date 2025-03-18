@@ -138,15 +138,9 @@ export default function AddProject() {
 		formData.append("bdd", JSON.stringify(technoBDD));
 
 		try {
-			const token = import.meta.env.VITE_TOKEN;
 			const response = await fetch("https://apicv.matt-dev.fr/api/projects/", {
 				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-					"X-API-KEY": token,
-				},
 				body: formData,
-				credentials: "include",
 			});
 
 			if (response.ok) {
