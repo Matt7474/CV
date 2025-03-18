@@ -143,7 +143,7 @@ export default function AddProject() {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
-					"X-API-KEY": `${token}`,
+					"X-API-KEY": token,
 				},
 				body: formData,
 			});
