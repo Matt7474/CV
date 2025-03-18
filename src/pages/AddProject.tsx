@@ -146,7 +146,6 @@ export default function AddProject() {
 				},
 				body: formData,
 			});
-			const responseText = await response.text();
 			if (response.ok) {
 				// Réponse du serveur est correcte
 				const newProject = await response.json();
@@ -154,9 +153,11 @@ export default function AddProject() {
 				setIsOpen(false);
 				// Optionnel : Gérer le succès, par exemple afficher un message ou rediriger
 			} else {
+				const responseText = await response.text();
 				// Gérer l'erreur si la réponse n'est pas ok
 				console.error(`Erreur ${response.status} : ${responseText}`);
-				console.error("Erreur lors de la création du projet.");
+				// console.error("Erreur lors de la création du projet.");
+				return;
 			}
 		} catch (error) {
 			console.error("Erreur de connexion : ", error);
