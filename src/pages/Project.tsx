@@ -163,7 +163,6 @@ export default function Project() {
 				</p>
 
 				<div className="grid grid-cols-3 pt-4 justify-items-stretch gap-4 md:grid-cols-5 3xl:text-xl">
-					Conception
 					<ul
 						className={
 							isDarkmode
