@@ -172,10 +172,15 @@ export default function AddProject() {
 		}
 
 		try {
+			const token = import.meta.env.VITE_TOKEN;
 			const response = await fetch(
 				`https://apicv.matt-dev.fr/api/projects/${slug}`,
 				{
 					method: "DELETE",
+					headers: {
+						// 'Content-Type': 'application/json',
+						"X-API-KEY": token,
+					},
 				},
 			);
 			if (response.ok) {
@@ -228,11 +233,15 @@ export default function AddProject() {
 		);
 
 		try {
+			const token = import.meta.env.VITE_TOKEN;
 			const response = await fetch(
 				`${baseUrl}/api/projects/${currentProject.slug}`,
 				{
 					method: "PATCH",
-					headers: { "Content-Type": "application/json" },
+					headers: {
+						// 'Content-Type': 'application/json',
+						"X-API-KEY": token,
+					},
 					body: JSON.stringify({
 						title,
 						description,
