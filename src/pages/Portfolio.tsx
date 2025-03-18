@@ -30,7 +30,7 @@ export default function Portfolio() {
 	return (
 		<div>
 			{isLoading ? (
-				<div className="flex flex-col justify-self-center mt-40 sm:mt-50 xl:mt-70">
+				<div className="flex flex-col justify-self-center self-center mt-40 sm:mt-50 xl:mt-70">
 					<div
 						className={
 							isDarkmode
@@ -41,8 +41,8 @@ export default function Portfolio() {
 					<p
 						className={
 							isDarkmode
-								? "text-white mt-4 md:font-semibold md:text-lg xl:text-xl"
-								: "text-black mt-4 md:font-semibold md:text-lg xl:text-xl"
+								? "self-center text-white mt-4 md:font-semibold md:text-lg xl:text-xl"
+								: "self-center text-black mt-4 md:font-semibold md:text-lg xl:text-xl"
 						}
 					>
 						Chargement des données ...
