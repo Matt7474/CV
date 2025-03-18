@@ -146,6 +146,7 @@ export default function AddProject() {
 					"X-API-KEY": token,
 				},
 				body: formData,
+				credentials: "include",
 			});
 
 			if (response.ok) {
