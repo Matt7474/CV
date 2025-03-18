@@ -239,7 +239,7 @@ export default function AddProject() {
 				{
 					method: "PATCH",
 					headers: {
-						// 'Content-Type': 'application/json',
+						"Content-Type": "application/json",
 						"X-API-KEY": token,
 					},
 					body: JSON.stringify({
