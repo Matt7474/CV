@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-// import { portfolio } from "../data/portfolio";
 import useDarkMode from "../store/darkmode";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
@@ -30,7 +29,6 @@ export default function Portfolio() {
 			} catch (e) {
 				console.error("Error fetching data:", e);
 
-				// Vérifie toutes les 5 secondes si l'API est de retour
 				const interval = setInterval(async () => {
 					try {
 						const retryResponse = await fetch(
@@ -43,7 +41,7 @@ export default function Portfolio() {
 					} catch (error) {
 						console.log("API toujours indisponible, nouvelle tentative...");
 					}
-				}, 1000);
+				}, 3000); // Vérifie toutes les 3 secondes si l'API est de retour
 			}
 		};
 

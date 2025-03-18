@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
-// import { projects } from "../data";
 import useDarkMode from "../store/darkmode";
 import { useEffect, useState } from "react";
-
-// import { portfolio } from "../data/portfolio";
 import { CirclePlus, Pencil, Trash2 } from "lucide-react";
 import dayjs from "dayjs";
 import type { iProject } from "../types/projects";
