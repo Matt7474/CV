@@ -141,12 +141,12 @@ export default function AddProject() {
 			const response = await fetch("https://apicv.matt-dev.fr/api/projects/", {
 				method: "POST",
 				headers: {
-					"Content-Type": "application/json",
+					// 'Content-Type': 'application/json',
 					"X-API-KEY": "mon_token_secret",
 				},
 				body: formData,
 			});
-
+			const responseText = await response.text();
 			if (response.ok) {
 				// Réponse du serveur est correcte
 				const newProject = await response.json();
@@ -155,6 +155,7 @@ export default function AddProject() {
 				// Optionnel : Gérer le succès, par exemple afficher un message ou rediriger
 			} else {
 				// Gérer l'erreur si la réponse n'est pas ok
+				console.error(`Erreur ${response.status} : ${responseText}`);
 				console.error("Erreur lors de la création du projet.");
 			}
 		} catch (error) {
