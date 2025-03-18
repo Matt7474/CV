@@ -67,19 +67,17 @@ export default function Project() {
 							role="button"
 							aria-label="Fermer la modal"
 						>
-					
 							{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 							<div
 								className="bg-white p-3 rounded-2xl shadow-lg w-4/5 sm:w-3/4 lg:w-2/3 xl:w-3/4"
-								onClick={(e) => e.stopPropagation()} 
+								onClick={(e) => e.stopPropagation()}
 							>
 								{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 								<img
-									
 									src={`https://apicv.matt-dev.fr${project.image}`}
 									alt={`image-projet-${project.title}`}
 									className="rounded-xl w-full h-auto object-cover max-h-[80vh]"
-									onClick={() => setIsOpen(false)} /
+									onClick={() => setIsOpen(false)}
 								/>
 							</div>
 						</div>
@@ -87,7 +85,6 @@ export default function Project() {
 					{/* Fin Modal */}
 				</div>
 				<div className="lg:w-1/2 3xl:text-xl 3xl:pt-2">
-					
 					<p
 						className={
 							isDarkmode
@@ -104,8 +101,6 @@ export default function Project() {
 								? "text-white py-2 px-4 flex justify-between"
 								: "text-black py-2 px-4 flex justify-between"
 						}
-
-	
 					>
 						<div className="flex flex-col">
 							{project.github ? (
@@ -156,7 +151,6 @@ export default function Project() {
 						? "text-white p-4 xl:flex md:justify-around 4xl:justify-center 4xl:gap-20 "
 						: "text-black p-4 xl:flex md:justify-around 4xl:justify-center 4xl:gap-20 "
 				}
-			
 			>
 				<p
 					className={
@@ -169,7 +163,7 @@ export default function Project() {
 				</p>
 
 				<div className="grid grid-cols-3 pt-4 justify-items-stretch gap-4 md:grid-cols-5 3xl:text-xl">
-					{/* Conception */}
+					Conception
 					<ul
 						className={
 							isDarkmode
@@ -186,7 +180,7 @@ export default function Project() {
 						>
 							Conception
 						</p>
-					
+
 						{project.conception?.map((conception: string) => (
 							<li key={conception}>{conception}</li>
 						))}
@@ -198,7 +192,6 @@ export default function Project() {
 								? "pb-4 md:border-l-2 md:pl-6 md:border-emerald-500 "
 								: "pb-4 md:border-l-2 md:pl-6 md:border-indigo-800 "
 						}
-					
 					>
 						<p
 							className={
@@ -209,7 +202,7 @@ export default function Project() {
 						>
 							Front
 						</p>
-					
+
 						{project.front?.map((front: string) => (
 							<li key={front}>{front}</li>
 						))}
@@ -221,7 +214,6 @@ export default function Project() {
 								? "pb-4 md:border-l-2 md:pl-6 md:border-emerald-500"
 								: "pb-4 md:border-l-2 md:pl-6 md:border-indigo-800"
 						}
-				
 					>
 						<p
 							className={
@@ -232,7 +224,7 @@ export default function Project() {
 						>
 							Back
 						</p>
-					
+
 						{project.back?.map((back: string) => (
 							<li key={back}>{back}</li>
 						))}
@@ -244,7 +236,6 @@ export default function Project() {
 								? "pb-4 md:border-l-2 md:pl-6 md:border-emerald-500"
 								: "pb-4 md:border-l-2 md:pl-6 md:border-indigo-800"
 						}
-	
 					>
 						<p
 							className={
@@ -255,7 +246,7 @@ export default function Project() {
 						>
 							FullStack
 						</p>
-		
+
 						{project.fullstack?.map((fullstack: string) => (
 							<li key={fullstack}>{fullstack}</li>
 						))}
@@ -267,7 +258,6 @@ export default function Project() {
 								? "pb-4 md:border-l-2 md:pl-6 md:border-emerald-500 md:flex md:flex-col"
 								: "pb-4 md:border-l-2 md:pl-6 md:border-indigo-800 md:flex md:flex-col"
 						}
-		
 					>
 						<p
 							className={
@@ -278,7 +268,7 @@ export default function Project() {
 						>
 							BDD
 						</p>
-					
+
 						{project.bdd?.map((bdd: string) => (
 							<li key={bdd}>{bdd}</li>
 						))}
