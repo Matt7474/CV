@@ -164,6 +164,8 @@ export default function Home() {
 												: "underline pl-2 text-black group-hover:text-cyan-500 transition-colors duration-300 md:text-sm"
 										}
 										href="https://www.linkedin.com/in/matthieu-dimier-a51539290"
+										target="_blank"
+										rel="noopener noreferrer"
 									>
 										DIMIER Matthieu
 									</a>
@@ -190,6 +192,8 @@ export default function Home() {
 												: "underline pl-2 text-black group-hover:text-cyan-500 transition-colors duration-300 md:text-sm"
 										}
 										href="https://github.com/Matt7474"
+										target="_blank"
+										rel="noopener noreferrer"
 									>
 										Matt7474
 									</a>
