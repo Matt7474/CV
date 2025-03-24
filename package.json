@@ -15,6 +15,7 @@
 		"@fortawesome/react-fontawesome": "^0.2.2",
 		"@sentry/react": "^9.9.0",
 		"@sentry/tracing": "^7.120.3",
+		"@sentry/vite-plugin": "^3.2.2",
 		"@tailwindcss/vite": "^4.0.14",
 		"dayjs": "^1.11.13",
 		"dotenv": "^16.4.7",
@@ -22,6 +23,7 @@
 		"lucide-react": "^0.477.0",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
+		"react-helmet": "^6.1.0",
 		"react-router-dom": "^7.3.0",
 		"tailwindcss": "^4.0.14",
 		"zustand": "^5.0.3"
@@ -31,6 +33,7 @@
 		"@tailwindcss/postcss": "^4.0.14",
 		"@types/react": "^19.0.10",
 		"@types/react-dom": "^19.0.4",
+		"@types/react-helmet": "^6.1.11",
 		"@vitejs/plugin-react": "^4.3.4",
 		"autoprefixer": "^10.4.21",
 		"daisyui": "^5.0.3",
