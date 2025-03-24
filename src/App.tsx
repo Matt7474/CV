@@ -34,7 +34,7 @@ function App() {
             script-src 'self' 'unsafe-inline' https://apis.google.com; 
             style-src 'self' 'unsafe-inline'; 
             img-src 'self' https://images.example.com; 
-            connect-src 'self'; 
+            connect-src 'self' https://apicv.matt-dev.fr; 
             font-src 'self'; 
             object-src 'none'; 
             frame-ancestors 'none'; 
