@@ -13,7 +13,6 @@ import LoginSecret from "./pages/Loginsecret";
 import AddProjectDetails from "./pages/AddProjectDetails";
 import MentionsLegales from "./pages/MentionsLegales";
 import Page404 from "./pages/Page404";
-import { Helmet } from "react-helmet";
 
 function App() {
 	const { isDarkmode } = useDarkMode();
@@ -26,23 +25,6 @@ function App() {
 					: "min-h-screen flex flex-col bg-gradient-to-t from-amber-500 via-pink-700 to-indigo-900"
 			}
 		>
-			<Helmet>
-				<meta
-					httpEquiv="Content-Security-Policy"
-					content="
-            default-src 'self'; 
-            script-src 'self' 'unsafe-inline' https://apis.google.com; 
-            style-src 'self' 'unsafe-inline'; 
-            img-src 'self' https://apicv.matt-dev.fr; 
-            connect-src 'self' https://apicv.matt-dev.fr; 
-            font-src 'self'; 
-            object-src 'none'; 
-            frame-ancestors 'none'; 
-            base-uri 'self'; 
-            form-action 'self';
-          "
-				/>
-			</Helmet>
 			<BrowserRouter>
 				<Navbar />
 
