@@ -29,18 +29,7 @@ function App() {
 			<Helmet>
 				<meta
 					httpEquiv="Content-Security-Policy"
-					content="
-            default-src 'self'; 
-            script-src 'self' 'unsafe-inline' https://apis.google.com; 
-            style-src 'self' 'unsafe-inline'; 
-            img-src 'self' https://apicv.matt-dev.fr; 
-            connect-src 'self' https://apicv.matt-dev.fr; 
-            font-src 'self'; 
-            object-src 'none'; 
-            frame-ancestors 'none'; 
-            base-uri 'self'; 
-            form-action 'self';
-          "
+					content="default-src 'self'; script-src 'self' 'unsafe-inline'; connect-src 'self' https://apicv.matt-dev.fr; ..."
 				/>
 			</Helmet>
 			<BrowserRouter>
