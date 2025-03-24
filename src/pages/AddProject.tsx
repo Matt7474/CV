@@ -9,6 +9,7 @@ export default function AddProject() {
 	const { isDarkmode } = useDarkMode();
 	const [isOpen, setIsOpen] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
+	const [count, setCount] = useState(1);
 
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
@@ -327,6 +328,7 @@ export default function AddProject() {
 										// alt={`image-projet-${project.title}`}
 										src={`https://apicv.matt-dev.fr${project.image}`}
 										alt={`image-projet-${project.title}`}
+										loading="lazy"
 									/>
 
 									<div className="flex justify-between">
@@ -390,7 +392,7 @@ export default function AddProject() {
 					{/* Modal */}
 					{isOpen && (
 						<div
-							className="absolute px-2 flex justify-center z-50 place-self-center w-full max-w-2xl lg:max-w-[1000px]"
+							className="btn-secondary absolute px-2 flex justify-center z-50 place-self-center w-full max-w-2xl lg:max-w-[1000px]"
 							onKeyDown={(e) => {
 								if (e.key === "Escape") setIsOpen(false);
 							}}
@@ -515,7 +517,11 @@ export default function AddProject() {
 													<input
 														type="file"
 														id="image"
-														className="file-input file-input-bordered w-full"
+														className={
+															isDarkmode
+																? "file-input file-input-success w-full"
+																: "file-input file-input-bordered w-full"
+														}
 														onChange={(e) =>
 															setImage(
 																e.target.files ? e.target.files[0] : null,
@@ -864,6 +870,29 @@ export default function AddProject() {
 					{/* Fin Modal */}
 				</div>
 			)}
+
+			<button
+				type="button"
+				onClick={() => {
+					setCount((prev) => prev + 1);
+
+					if (count < 2) {
+						alert(
+							"⚡ Expecto Patronum ! ⚡\n\nMauvaise idée moldus... Très mauvaise idée ! 🪄\nUne alarme magique a été déclenchée et le Ministère de la Magie de Sentry est en route ! 🚨\n\nDumbledore vous a vu...\n\nIl n'a rien dit, mais il sait. Et cela est bien pire qu'une punition de Rogue. Alors ne recommencez pas ! \n\nConstant vigilance ! 👁️",
+						);
+					} else {
+						alert(
+							"💥 Avada Kedavra ! 💥\n\nLe Ministère de la Magie de Sentry à décidé que vous êtiez trop dangereux pour rester libre. 🪄\n\nPréparez-vous à affronter votre destin piètre moldus !",
+						);
+					}
+					throw new Error("Un moldus à encore clické sur le bouton d'essai !");
+				}}
+				className={`btn ${
+					isDarkmode ? "btn-success" : "btn-secondary"
+				} flex flex-col justify-self-center self-center mt-10 mb-5`}
+			>
+				Break the world
+			</button>
 		</div>
 	);
 }

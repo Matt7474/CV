@@ -100,11 +100,14 @@ export default function Portfolio() {
 									}
 								>
 									<div>
-										<img
-											className="w-100 aspect-4/3 border-transparent rounded-xl object-cover"
-											src={`https://apicv.matt-dev.fr${project.image}`}
-											alt={`image-projet-${project.title}`}
-										/>
+										{project.image && (
+											<img
+												className="w-100 aspect-4/3 border-transparent rounded-xl object-cover"
+												src={`https://apicv.matt-dev.fr${project.image}`}
+												alt={`image-projet-${project.title}`}
+												loading="lazy"
+											/>
+										)}
 										<h2 className="text-2xl font-bold my-4">{project.title}</h2>
 										<p className="text-xl">
 											{project.description?.split(" ").slice(0, 10).join(" ")}
