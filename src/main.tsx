@@ -8,6 +8,7 @@ Sentry.init({
 	dsn: "https://3234c07e5f3d36ee3f0100362b1609ef@o4509033134817280.ingest.de.sentry.io/4509033136914512",
 });
 
+// biome-ignore lint/style/noNonNullAssertion: <explanation>
 createRoot(document.getElementById("root")!).render(
 	<StrictMode>
 		<App />
