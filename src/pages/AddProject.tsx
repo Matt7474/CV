@@ -246,6 +246,7 @@ export default function AddProject() {
 						slug,
 						github,
 						site,
+						image,
 						date,
 						oldSlug: currentProject.slug,
 						technoConception,
