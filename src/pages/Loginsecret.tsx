@@ -117,7 +117,7 @@ export default function LoginSecret({ setIsAuthenticated }: LoginSecretProps) {
 					isDarkmode
 						? "btn-success text-white rounded-lg"
 						: "btn-secondary rounded-lg"
-				} flex flex-col self-center mt-10 -mb-5 sm:mt-43 lg:-mb-20 lg:mt-18 xl:mt-80 2xl:mt-18 3xl:mt-90 4xl:mt-120`}
+				} flex flex-col self-center mt-10 -mb-5 sm:mt-43 lg:-mb-20 lg:mt-18 xl:mt-80 2xl:mt-18 3xl:mt-90 4xl:mt-90`}
 			>
 				N'appuyez surtout pas ici !
 			</button>
