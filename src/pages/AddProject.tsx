@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { CirclePlus, Pencil, Trash2 } from "lucide-react";
 import dayjs from "dayjs";
 import type { iProject } from "../types/projects";
+import useCsrfToken from "../store/useCsrfToken";
 
 export default function AddProject() {
 	const { isDarkmode } = useDarkMode();
@@ -37,6 +38,10 @@ export default function AddProject() {
 	const [projectSlug, setProjectSlug] = useState<string | null>(null);
 
 	const [refreshKey, setRefreshKey] = useState(0); // Clé pour forcer le re-render
+
+	const csrfToken = useCsrfToken();
+	const [, setMessage] = useState("");
+
 	// Chargement des projets
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
@@ -117,6 +122,7 @@ export default function AddProject() {
 	// Fonction pour ajouter un projet
 	const addNewProject = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		if (!csrfToken) return;
 		// resetForm();
 		const formData = new FormData();
 		if (image) {
@@ -140,11 +146,16 @@ export default function AddProject() {
 			const response = await fetch("https://apicv.matt-dev.fr/api/projects/", {
 				method: "POST",
 				headers: {
+					"Content-Type": "application/json",
+					"X-CSRF-Token": csrfToken, // Envoi du token CSRF
 					// 'Content-Type': 'application/json',
 					"X-API-KEY": token,
 				},
+				credentials: "include",
 				body: formData,
 			});
+			const data = await response.json();
+			setMessage(data.message);
 			if (response.ok) {
 				// Réponse du serveur est correcte
 				const newProject = await response.json();

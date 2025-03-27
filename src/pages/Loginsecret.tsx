@@ -10,6 +10,7 @@ export default function LoginSecret({ setIsAuthenticated }: LoginSecretProps) {
 	const { isDarkmode } = useDarkMode();
 	const [user, setUser] = useState("");
 	const [password, setPassword] = useState("");
+	const [count, setCount] = useState(1);
 	const navigate = useNavigate();
 
 	const handleSubmit = () => {
@@ -93,6 +94,33 @@ export default function LoginSecret({ setIsAuthenticated }: LoginSecretProps) {
 					</button>
 				</form>
 			</div>
+			<button
+				type="button"
+				onClick={() => {
+					setCount((prev) => prev + 1);
+
+					if (count < 2) {
+						alert(
+							"⚡ Expecto Patronum ! ⚡\n\nVous n'écoutez donc jamais les consignes ? ... Très mauvaise idée ! 🪄\nUne alarme magique a été déclenchée au Ministère de la Magie de Sentry ! 🚨\n\nDe plus, Dumbledore vous a vu...\n\nIl n'a rien dit, mais il sait. Et cela est bien pire qu'une punition. Alors ne recommencez pas ! \n\nConstant vigilance ! 👁️",
+						);
+					} else {
+						alert(
+							"💥 Avada Kedavra ! 💥\n\nLe Ministère de la Magie de Sentry à décidé que vous êtiez trop dangereux pour rester libre ! \n\nVous subissez un Repulso vers va page du CV 🪄\n\nPréparez-vous à affronter votre destin piètre moldus !",
+						);
+						navigate("/");
+					}
+					throw new Error(
+						"Un moldus à clické sur le bouton dans le login secret !",
+					);
+				}}
+				className={`btn ${
+					isDarkmode
+						? "btn-success text-white rounded-lg"
+						: "btn-secondary rounded-lg"
+				} flex flex-col self-center mt-10 -mb-5 sm:mt-43 lg:-mb-20 lg:mt-18 xl:mt-80 2xl:mt-18 3xl:mt-90 4xl:mt-120`}
+			>
+				N'appuyez surtout pas ici !
+			</button>
 		</div>
 	);
 }
