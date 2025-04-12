@@ -147,7 +147,7 @@ export default function AddProject() {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
-					"X-CSRF-Token": csrfToken, // Envoi du token CSRF
+					// "X-CSRF-Token": csrfToken, // Envoi du token CSRF
 					// 'Content-Type': 'application/json',
 					"X-API-KEY": token,
 				},
