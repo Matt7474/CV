@@ -146,27 +146,22 @@ export default function AddProject() {
 			const response = await fetch("https://apicv.matt-dev.fr/api/projects/", {
 				method: "POST",
 				headers: {
-					// "Content-Type": "application/json",
-					// "X-CSRF-Token": csrfToken, // Envoi du token CSRF
-					// 'Content-Type': 'application/json',
 					"X-API-KEY": token,
 				},
-				// credentials: "include",
 				body: formData,
 			});
-			const data = await response.json();
-			setMessage(data.message);
+
+			const data = await response.json(); // ✅ lire une seule fois
+
 			if (response.ok) {
-				// Réponse du serveur est correcte
-				const newProject = await response.json();
-				setProjects((prevProjects) => [...prevProjects, newProject]);
+				setProjects((prevProjects) => [...prevProjects, data]);
 				setIsOpen(false);
-				// Optionnel : Gérer le succès, par exemple afficher un message ou rediriger
+				setMessage(data.message || "Projet ajouté !");
 			} else {
-				const responseText = await response.text();
-				// Gérer l'erreur si la réponse n'est pas ok
-				console.error(`Erreur ${response.status} : ${responseText}`);
-				// console.error("Erreur lors de la création du projet.");
+				console.error(
+					`Erreur ${response.status} : ${data.message || "Problème serveur"}`,
+				);
+				setMessage("Erreur lors de la création du projet.");
 				return;
 			}
 		} catch (error) {
