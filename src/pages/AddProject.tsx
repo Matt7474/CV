@@ -146,7 +146,7 @@ export default function AddProject() {
 			const response = await fetch("https://apicv.matt-dev.fr/api/projects/", {
 				method: "POST",
 				headers: {
-					"Content-Type": "application/json",
+					// "Content-Type": "application/json",
 					// "X-CSRF-Token": csrfToken, // Envoi du token CSRF
 					// 'Content-Type': 'application/json',
 					"X-API-KEY": token,
