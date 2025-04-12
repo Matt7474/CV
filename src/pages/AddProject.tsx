@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { CirclePlus, Pencil, Trash2 } from "lucide-react";
 import dayjs from "dayjs";
 import type { iProject } from "../types/projects";
-import useCsrfToken from "../store/useCsrfToken";
+// import useCsrfToken from "../store/useCsrfToken";
 
 export default function AddProject() {
 	const { isDarkmode } = useDarkMode();
@@ -39,7 +39,7 @@ export default function AddProject() {
 
 	const [refreshKey, setRefreshKey] = useState(0); // Clé pour forcer le re-render
 
-	const csrfToken = useCsrfToken();
+	// const csrfToken = useCsrfToken();
 	const [, setMessage] = useState("");
 
 	// Chargement des projets
