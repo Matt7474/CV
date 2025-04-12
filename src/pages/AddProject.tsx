@@ -122,7 +122,7 @@ export default function AddProject() {
 	// Fonction pour ajouter un projet
 	const addNewProject = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		if (!csrfToken) return;
+		// if (!csrfToken) return;
 		// resetForm();
 		const formData = new FormData();
 		if (image) {
